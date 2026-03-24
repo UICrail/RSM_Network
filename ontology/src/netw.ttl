@@ -1,0 +1,313 @@
+@prefix : <https://cdm.ovh/rsm/network/netw#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix netw: <https://cdm.ovh/rsm/network/netw#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rsmt: <https://cdm.ovh/rsm/time/time#> .
+@base <https://cdm.ovh/rsm/network/netw> .
+
+<https://cdm.ovh/rsm/network/netw> rdf:type owl:Ontology ;
+                                    owl:versionIRI <urn:absolute:0.1> ;
+                                    owl:imports <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ,
+                                                <https://cdm.ovh/rsm/time/time> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember
+dul:hasMember rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart
+dul:hasPart rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant
+dul:hasParticipant rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasProperPart
+dul:hasProperPart rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies
+dul:satisfies rdf:type owl:ObjectProperty .
+
+
+###  https://cdm.ovh/rsm/network/netw#concernsNetwork
+netw:concernsNetwork rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain netw:NetworkManagement ;
+                     rdfs:range netw:RailwayNetwork ;
+                     rdfs:label "concerns network"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#containsEntity
+netw:containsEntity rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf dul:hasProperPart ,
+                                       netw:containsEntityTransitive ;
+                    owl:inverseOf netw:isContainedIn ;
+                    rdf:type owl:IrreflexiveProperty ;
+                    rdfs:domain netw:ContainingEntity ;
+                    rdfs:range netw:NetEntity ;
+                    rdfs:comment "Refers to entities that are proper parts of the containing entity. 'Proper' entails that the property is irreflexive, and it is characterized as such in this version of the ontology. As container entities can contain other containers, use the transitive property closure to find all entities contained, directly or indirectly, in a container."@en ;
+                    rdfs:label "contains entity" .
+
+
+###  https://cdm.ovh/rsm/network/netw#containsEntityTransitive
+netw:containsEntityTransitive rdf:type owl:ObjectProperty ,
+                                       owl:TransitiveProperty ;
+                              rdfs:domain netw:ContainingEntity ;
+                              rdfs:range netw:NetEntity ;
+                              rdfs:comment "use for retrieving all entities contained, directly or indirectly, in a container"@en ;
+                              rdfs:label "contains entity (transitive)" .
+
+
+###  https://cdm.ovh/rsm/network/netw#definedByCollection
+netw:definedByCollection rdf:type owl:ObjectProperty ;
+                         rdfs:domain netw:SubNetwork ;
+                         rdfs:range netw:NetEntityCollection ;
+                         rdfs:label "defined by collection"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#hasInfrastructureManager
+netw:hasInfrastructureManager rdf:type owl:ObjectProperty ,
+                                       owl:FunctionalProperty ;
+                              rdfs:domain netw:NetworkManagement ;
+                              rdfs:range netw:InfrastructureManager ;
+                              rdfs:label "has Infrastructure Manager"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#hasSelectionCriterion
+netw:hasSelectionCriterion rdf:type owl:ObjectProperty ;
+                           rdfs:domain netw:NetEntityCollection ;
+                           rdfs:range netw:SelectionCriterion ;
+                           rdfs:label "has selection criterion"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#hasSubNetwork
+netw:hasSubNetwork rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf dul:hasPart ;
+                   owl:inverseOf netw:isSubNetworkOf ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( netw:RailwayNetwork
+                                               netw:SubNetwork
+                                             )
+                               ] ;
+                   rdfs:range netw:SubNetwork ;
+                   rdfs:comment "Links an infrastructure artefact (network or sub-network) to its sub-networks."@en ;
+                   rdfs:label "has sub network"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#hasTopology
+netw:hasTopology rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf dul:satisfies ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain netw:NetworkLayout ;
+                 rdfs:range netw:NetworkTopology ;
+                 rdfs:label "has topology"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#involvesNetwork
+netw:involvesNetwork rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf dul:hasParticipant ;
+                     rdfs:domain netw:NetworkLayout ;
+                     rdfs:range netw:RailwayNetwork ;
+                     rdfs:label "involvesNetwork" .
+
+
+###  https://cdm.ovh/rsm/network/netw#isContainedIn
+netw:isContainedIn rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf netw:isContainedInTransitive ;
+                   rdfs:label "is contained in"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#isContainedInTransitive
+netw:isContainedInTransitive rdf:type owl:ObjectProperty ,
+                                      owl:TransitiveProperty ;
+                             rdfs:label "is contained in (transitive)" .
+
+
+###  https://cdm.ovh/rsm/network/netw#isSubNetworkOf
+netw:isSubNetworkOf rdf:type owl:ObjectProperty ;
+                    rdfs:label "is subnetwork of" .
+
+
+###  https://cdm.ovh/rsm/network/netw#selectedFromNetwork
+netw:selectedFromNetwork rdf:type owl:ObjectProperty ;
+                         rdfs:domain netw:NetEntityCollection ;
+                         rdfs:range [ rdf:type owl:Class ;
+                                      owl:unionOf ( netw:RailwayNetwork
+                                                    netw:SubNetwork
+                                                  )
+                                    ] ;
+                         rdfs:label "selected from network"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#serializedAs
+netw:serializedAs rdf:type owl:ObjectProperty ;
+                  rdfs:domain netw:NetworkTopology ;
+                  rdfs:range netw:TopologyGraph ;
+                  rdfs:label "serialized as"@en .
+
+
+###  https://cdm.ovh/rsm/time/time#hasValidityInterval
+rsmt:hasValidityInterval rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent
+dul:Agent rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collection
+dul:Collection rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description
+dul:Description rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact
+dul:DesignedArtifact rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject
+dul:InformationObject rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation
+dul:Situation rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent
+dul:SocialAgent rdf:type owl:Class ;
+                rdfs:subClassOf dul:Agent .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval
+dul:TimeInterval rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/network/netw#ContainingEntity
+netw:ContainingEntity rdf:type owl:Class ;
+                      rdfs:subClassOf netw:NetEntity ;
+                      rdfs:comment "A NetEntity that may contain other net entities, to build an 'authoritative' breakdown of net entities. The way the breakdown is defined (by area first, or by subsystem first...) is left to the data owner."@en ;
+                      rdfs:label "Containing entity"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#InfrastructureManager
+netw:InfrastructureManager rdf:type owl:Class ;
+                           rdfs:subClassOf netw:LegalEntity ;
+                           rdfs:label "Infrastructure manager"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#LegalEntity
+netw:LegalEntity rdf:type owl:Class ;
+                 rdfs:subClassOf dul:SocialAgent ;
+                 rdfs:comment "Provisional. Ultimately, should reference some other module or ontology."@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#NetEntity
+netw:NetEntity rdf:type owl:Class ;
+               rdfs:subClassOf netw:RailwayInfrastructureArtefact ;
+               owl:disjointWith netw:SubNetwork ;
+               rdfs:label "Net entity"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#NetEntityCollection
+netw:NetEntityCollection rdf:type owl:Class ;
+                         rdfs:subClassOf dul:Collection ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty dul:hasMember ;
+                                           owl:allValuesFrom netw:NetEntity
+                                         ] ;
+                         rdfs:comment "A collection of net entities, typically selected from one or more railway networks, and possibly used to define a sub-network. Collection membership (using dul:hasMember) is user-defined, and has no formal relationship with netw:containsEntity."@en ;
+                         rdfs:label "Net Entity collection" .
+
+
+###  https://cdm.ovh/rsm/network/netw#NetworkLayout
+netw:NetworkLayout rdf:type owl:Class ;
+                   rdfs:subClassOf dul:Situation ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty netw:hasTopology ;
+                                     owl:someValuesFrom netw:NetworkTopology
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty rsmt:hasValidityInterval ;
+                                     owl:allValuesFrom dul:TimeInterval
+                                   ] ;
+                   rdfs:comment "Associates a Railway Network with a topology. Validity interval, if provided, bounds the validity of this association."@en ;
+                   rdfs:label "Network layout" .
+
+
+###  https://cdm.ovh/rsm/network/netw#NetworkManagement
+netw:NetworkManagement rdf:type owl:Class ;
+                       rdfs:subClassOf dul:Situation ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty rsmt:hasValidityInterval ;
+                                         owl:allValuesFrom dul:TimeInterval
+                                       ] ;
+                       rdfs:comment "Relationship between a network and its infrastructure manager over a particular period of time (if provided)."@en ;
+                       rdfs:label "Network management" .
+
+
+###  https://cdm.ovh/rsm/network/netw#NetworkTopology
+netw:NetworkTopology rdf:type owl:Class ;
+                     rdfs:subClassOf dul:Description ;
+                     rdfs:label "Network topology"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#ObservedNetworkLayout
+netw:ObservedNetworkLayout rdf:type owl:Class ;
+                           rdfs:subClassOf netw:NetworkLayout ;
+                           rdfs:label "Observed network layout" .
+
+
+###  https://cdm.ovh/rsm/network/netw#PlannedNetworkLayout
+netw:PlannedNetworkLayout rdf:type owl:Class ;
+                          rdfs:subClassOf netw:NetworkLayout ;
+                          rdfs:label "Planned network layout" .
+
+
+###  https://cdm.ovh/rsm/network/netw#RailwayInfrastructureArtefact
+netw:RailwayInfrastructureArtefact rdf:type owl:Class ;
+                                   rdfs:subClassOf dul:DesignedArtifact ;
+                                   rdfs:label "Railway infrastructure artefact"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#RailwayNetwork
+netw:RailwayNetwork rdf:type owl:Class ;
+                    rdfs:subClassOf netw:ContainingEntity ;
+                    rdfs:comment "Class of all material (tracks, signals, stations...) and immaterial (speed restrictions, ...) assets constituting a network."@en ;
+                    rdfs:label "Railway network"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#SelectionCriterion
+netw:SelectionCriterion rdf:type owl:Class ;
+                        rdfs:subClassOf dul:Description ;
+                        rdfs:comment "such as 'High speed...', 'TEN-T', 'Latvian National wide gauge'. Characterization is left open to extensions as SKOS concept schemes or subclasses."@en ;
+                        rdfs:label "Net entity selection criterion" .
+
+
+###  https://cdm.ovh/rsm/network/netw#SubNetwork
+netw:SubNetwork rdf:type owl:Class ;
+                rdfs:subClassOf netw:RailwayInfrastructureArtefact ;
+                rdfs:label "Sub network"@en .
+
+
+###  https://cdm.ovh/rsm/network/netw#TopologyGraph
+netw:TopologyGraph rdf:type owl:Class ;
+                   rdfs:subClassOf dul:InformationObject ;
+                   rdfs:comment "A Topology Graph individual denotes an information object carrying a serialized graph, typically retrievable from a file such as <http://example.org/topology1.ttl>. There can be several files, e.g. to provide several formats such as TTL, RDFXML, or JSON-LD."@en ;
+                   rdfs:label "Topology graph"@en .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi
