@@ -14,9 +14,11 @@
                                     owl:imports <https://cdm.ovh/rsm/time/time> .
 
 #################################################################
-#    Object Properties
+#    Object Properties
+
 #################################################################
-
+
+
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember
 dul:hasMember rdf:type owl:ObjectProperty .
 
@@ -159,9 +161,11 @@ rsmt:hasValidityInterval rdf:type owl:ObjectProperty .
 
 
 #################################################################
-#    Classes
+#    Classes
+
 #################################################################
-
+
+
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent
 dul:Agent rdf:type owl:Class .
 

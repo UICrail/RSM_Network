@@ -12,7 +12,6 @@
      xmlns:rsmt="https://cdm.ovh/rsm/time/time#">
     <owl:Ontology rdf:about="https://cdm.ovh/rsm/network/netw">
         <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/network/netw/0.1"/>
-        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
         <owl:imports rdf:resource="https://cdm.ovh/rsm/time/time"/>
     </owl:Ontology>
     
