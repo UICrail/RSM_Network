@@ -1,0 +1,2191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphol version="3">
+  <project name="Network" version="0.1">
+    <ontology addLabelFromUserInput="0" iri="https://cdm.ovh/rsm/network/netw" prefix="netw" addLabelFromSimpleName="0" lang="en">
+      <imports>
+        <import location="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" iri="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" isLocal="0" version=""/>
+        <import location="https://cdm.ovh/rsm/time/time.ttl" iri="https://cdm.ovh/rsm/time/time" isLocal="0" version="urn:absolute:1.0"/>
+      </imports>
+      <prefixes>
+        <prefix>
+          <value>dul</value>
+          <namespace>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#</namespace>
+        </prefix>
+        <prefix>
+          <value>netw</value>
+          <namespace>https://cdm.ovh/rsm/network/netw#</namespace>
+        </prefix>
+        <prefix>
+          <value>owl</value>
+          <namespace>http://www.w3.org/2002/07/owl#</namespace>
+        </prefix>
+        <prefix>
+          <value>rdf</value>
+          <namespace>http://www.w3.org/1999/02/22-rdf-syntax-ns#</namespace>
+        </prefix>
+        <prefix>
+          <value>rdfs</value>
+          <namespace>http://www.w3.org/2000/01/rdf-schema#</namespace>
+        </prefix>
+        <prefix>
+          <value>rsmt</value>
+          <namespace>https://cdm.ovh/rsm/time/time#</namespace>
+        </prefix>
+        <prefix>
+          <value>xml</value>
+          <namespace>http://www.w3.org/XML/1998/namespace</namespace>
+        </prefix>
+        <prefix>
+          <value>xsd</value>
+          <namespace>http://www.w3.org/2001/XMLSchema#</namespace>
+        </prefix>
+      </prefixes>
+      <datatypes>
+        <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+        <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral</datatype>
+        <datatype>http://www.w3.org/2000/01/rdf-schema#Literal</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#NCName</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#NMTOKEN</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#Name</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#anyURI</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#base64Binary</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#boolean</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#byte</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#dateTime</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#dateTimeStamp</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#decimal</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#double</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#float</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#hexBinary</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#int</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#integer</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#language</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#long</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#negativeInteger</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#nonPositiveInteger</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#normalizedString</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#positiveInteger</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#short</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#string</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#token</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#unsignedByte</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#unsignedInt</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#unsignedLong</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#unsignedShort</datatype>
+        <datatype>http://www.w3.org/2002/07/owl#rational</datatype>
+        <datatype>http://www.w3.org/2002/07/owl#real</datatype>
+      </datatypes>
+      <languages>
+        <language>de</language>
+        <language>en</language>
+        <language>es</language>
+        <language>fr</language>
+        <language>it</language>
+      </languages>
+      <facets>
+        <facet>http://www.w3.org/2001/XMLSchema#langRange</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#length</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#maxExclusive</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#maxInclusive</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#maxLength</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#minExclusive</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#minInclusive</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#minLength</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#pattern</facet>
+      </facets>
+      <annotationProperties>
+        <annotationProperty>http://www.w3.org/2000/01/rdf-schema#backwardCompatibleWith</annotationProperty>
+        <annotationProperty>http://www.w3.org/2000/01/rdf-schema#comment</annotationProperty>
+        <annotationProperty>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</annotationProperty>
+        <annotationProperty>http://www.w3.org/2000/01/rdf-schema#label</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#backwardCompatibleWith</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#deprecated</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#fetchedFrom</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#incompatibleWith</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#priorVersion</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#versionInfo</annotationProperty>
+      </annotationProperties>
+      <iris>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Abstract</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Amount</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ChemicalObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Classification</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collection</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collective</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Configuration</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Contract</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Design</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedSubstance</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Diagnosis</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FormalEntity</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FunctionalSubstance</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#LocalConcept</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Narrative</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Norm</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ObjectAggregate</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organism</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parthood</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Pattern</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Personification</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalBody</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PlanExecution</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Project</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Relation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Right</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Set</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObjectAttribute</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialRelation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpaceRegion</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpatioTemporalRegion</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeIndexedRelation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Transition</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TypeCollection</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#UnitOfMeasure</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#WorkflowExecution</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#actsFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#actsThrough</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#characterizes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#conceptualizes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#concretelyExpresses</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#coparticipatesWith</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#covers</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#defines</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesRole</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesTask</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#describes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#directlyFollows</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#directlyPrecedes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expands</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expresses</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expressesConcept</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#farFrom</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#follows</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasCommonBoundary</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasComponent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstraint</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasEventDate</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasInScope</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasIntervalDate</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParameter</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParameterDataValue</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPostcondition</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPrecondition</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasProperPart</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegionDataValue</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTask</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAction</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesEvent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesPart</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesTime</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesWhole</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#introduces</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#involvesAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAbout</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isActionIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAgentIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAgentInvolvedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isCharacterizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isComponentOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptExpressedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptUsedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptualizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConcretelyExpressedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConstituentOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConstraintFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isCoveredBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isDefinedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isDescribedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isEventIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExecutedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpandedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isIntroducedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isMemberOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isObjectIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isObservableAt</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParameterFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParametrizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPostconditionOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPreconditionOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isProperPartOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPropertPartOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isQualityOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRealizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isReferenceOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isReferenceOfInformationRealizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRegionFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRelatedToConcept</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRelatedToDescription</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRoleDefinedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRoleOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSatisfiedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSpecializedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSubordinatedTo</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSuperordinatedTo</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskDefinedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTimeIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTimeIntervalOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTimeOfObservationOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isUnifiedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#nearTo</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#overlaps</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#parametrizes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizesInformationAbout</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizesSelfInformation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#sameSettingAs</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#specializes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#unifies</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#usesConcept</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#Literal</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#backwardCompatibleWith</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#comment</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#label</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#NCName</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#NMTOKEN</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#Name</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#anyURI</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#base64Binary</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#boolean</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#byte</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#dateTime</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#dateTimeStamp</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#decimal</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#double</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#float</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#hexBinary</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#int</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#integer</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#langRange</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#language</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#length</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#long</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#maxExclusive</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#maxInclusive</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#maxLength</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#minExclusive</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#minInclusive</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#minLength</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#negativeInteger</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#nonPositiveInteger</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#normalizedString</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#pattern</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#positiveInteger</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#short</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#string</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#token</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#unsignedByte</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#unsignedInt</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#unsignedLong</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#unsignedShort</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#Nothing</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#Thing</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#backwardCompatibleWith</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#bottomDataProperty</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#bottomObjectProperty</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#deprecated</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#fetchedFrom</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#incompatibleWith</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#priorVersion</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#rational</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#real</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#topDataProperty</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#topObjectProperty</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#versionInfo</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#ContainingEntity</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#ContainingEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Containing entity</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#ContainingEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>A NetEntity that may contain other net entities, to build an 'authoritative' breakdown of net entities. The way the breakdown is defined (by area first, or by subsystem first...) is left to the data owner.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#InfrastructureManager</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#InfrastructureManager</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Infrastructure manager</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#LegalEntity</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#LegalEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Provisional. Ultimately, should reference some other module or ontology.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#NetEntity</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#NetEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Net entity</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#NetEntityCollection</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#NetEntityCollection</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Net Entity collection</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#NetEntityCollection</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>A collection of net entities, typically selected from one or more railway networks, and possibly used to define a sub-network. Collection membership (using dul:hasMember) is user-defined, and has no formal relationship with netw:containsEntity.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#NetworkLayout</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#NetworkLayout</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Network layout</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#NetworkLayout</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Associates a Railway Network with a topology. Validity interval, if provided, bounds the validity of this association.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#NetworkManagement</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#NetworkManagement</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Network management</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#NetworkManagement</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Relationship between a network and its infrastructure manager over a particular period of time (if provided).</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#NetworkTopology</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#NetworkTopology</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Network topology</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#ObservedNetworkLayout</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#ObservedNetworkLayout</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Observed network layout</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#PlannedNetworkLayout</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#PlannedNetworkLayout</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Planned network layout</lexicalForm>
+                <datatype>http://www.w3.org/2001/XMLSchema#string</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#RailwayInfrastructureArtefact</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#RailwayInfrastructureArtefact</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Railway infrastructure artefact</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#RailwayNetwork</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#RailwayNetwork</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Railway network</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#RailwayNetwork</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Class of all material (tracks, signals, stations...) and immaterial (speed restrictions, ...) assets constituting a network.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#SelectionCriterion</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#SelectionCriterion</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Net entity selection criterion</lexicalForm>
+                <datatype>http://www.w3.org/2001/XMLSchema#string</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#SelectionCriterion</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>such as 'High speed...', 'TEN-T', 'Latvian National wide gauge'. Characterization is left open to extensions as SKOS concept schemes or subclasses.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#SubNetwork</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#SubNetwork</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Sub network</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#TopologyGraph</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#TopologyGraph</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Topology graph</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#TopologyGraph</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>A Topology Graph individual denotes an information object carrying a serialized graph, typically retrievable from a file such as &lt;http://example.org/topology1.ttl>. There can be several files, e.g. to provide several formats such as TTL, RDFXML, or JSON-LD.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#concernsNetwork</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#concernsNetwork</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>concerns network</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#containsEntity</value>
+          <irreflexive/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#containsEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>contains entity</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#containsEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Refers to entities that are proper parts of the containing entity. 'Proper' entails that the property is irreflexive, and it is characterized as such in this version of the ontology. As container entities can contain other containers, use the transitive property closure to find all entities contained, directly or indirectly, in a container.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#containsEntityTransitive</value>
+          <transitive/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#containsEntityTransitive</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>contains entity (transitive)</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#containsEntityTransitive</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>use for retrieving all entities contained, directly or indirectly, in a container</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#definedByCollection</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#definedByCollection</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>defined by collection</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#hasInfrastructureManager</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#hasInfrastructureManager</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has Infrastructure Manager</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#hasSelectionCriterion</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#hasSelectionCriterion</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has selection criterion</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#hasSubNetwork</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#hasSubNetwork</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has sub network</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#hasSubNetwork</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Links an infrastructure artefact (network or sub-network) to its sub-networks.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#hasTopology</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#hasTopology</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has topology</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#involvesNetwork</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#involvesNetwork</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>involvesNetwork</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#isContainedIn</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#isContainedIn</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>is contained in</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#isContainedInTransitive</value>
+          <transitive/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#isContainedInTransitive</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>is contained in (transitive)</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#isSubNetworkOf</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#isSubNetworkOf</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>is subnetwork of</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#selectedFromNetwork</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#selectedFromNetwork</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>selected from network</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#serializedAs</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/network/netw#serializedAs</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>serialized as</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/time/time#hasValidityInterval</value>
+        </iri>
+        <iri>
+          <value>urn:x-graphol:origin</value>
+        </iri>
+      </iris>
+    </ontology>
+    <diagrams>
+      <diagram height="5000" width="5000" name="DUL_alignment_details">
+        <node type="role" id="n1" color="#c2b078">
+          <geometry y="-170" height="50" x="-190" width="70"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasProperPart</iri>
+          <label y="-200" height="23" customSize="0" size="12" x="-190" width="85"/>
+        </node>
+        <node type="role" id="n10" color="#c2b078">
+          <geometry y="-170" height="50" x="170" width="70"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies</iri>
+          <label y="-200" height="23" customSize="0" size="12" x="170" width="52"/>
+        </node>
+        <node type="role" id="n11" color="#fcfcfc">
+          <geometry y="-70" height="50" x="170" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#hasTopology</iri>
+          <label y="-100" height="23" customSize="0" size="12" x="170" width="76"/>
+        </node>
+        <node type="role" id="n19" color="#fcfcfc">
+          <geometry y="-70" height="50" x="-190" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#containsEntity</iri>
+          <label y="-100" height="23" customSize="0" size="12" x="-190" width="83"/>
+        </node>
+        <node type="concept" id="n2" color="#c2b078">
+          <geometry y="60" height="50" x="-190" width="110"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collection</iri>
+          <label y="60" height="23" customSize="0" size="12" x="-190" width="110"/>
+        </node>
+        <node type="role" id="n20" color="#fcfcfc">
+          <geometry y="-70" height="50" x="-70" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#hasSubNetwork</iri>
+          <label y="-100" height="23" customSize="0" size="12" x="-70" width="92"/>
+        </node>
+        <node type="role" id="n21" color="#c2b078">
+          <geometry y="-170" height="50" x="-70" width="70"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart</iri>
+          <label y="-200" height="23" customSize="0" size="12" x="-70" width="49"/>
+        </node>
+        <node type="concept" id="n3" color="#fcfcfc">
+          <geometry y="170" height="50" x="-190" width="155"/>
+          <iri>https://cdm.ovh/rsm/network/netw#NetEntityCollection</iri>
+          <label y="170" height="23" customSize="0" size="12" x="-190" width="155"/>
+        </node>
+        <node type="concept" id="n4" color="#c2b078">
+          <geometry y="60" height="50" x="0" width="110"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description</iri>
+          <label y="60" height="23" customSize="0" size="12" x="0" width="110"/>
+        </node>
+        <node type="concept" id="n5" color="#fcfcfc">
+          <geometry y="170" height="50" x="0" width="125"/>
+          <iri>https://cdm.ovh/rsm/network/netw#SelectionCriterion</iri>
+          <label y="170" height="23" customSize="0" size="12" x="0" width="125"/>
+        </node>
+        <node type="role" id="n8" color="#fcfcfc">
+          <geometry y="-67" height="50" x="48" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#involvesNetwork</iri>
+          <label y="-97" height="23" customSize="0" size="12" x="48" width="96"/>
+        </node>
+        <node type="role" id="n9" color="#c2b078">
+          <geometry y="-167" height="50" x="48" width="70"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant</iri>
+          <label y="-197" height="23" customSize="0" size="12" x="48" width="85"/>
+        </node>
+        <edge type="inclusion" target="n2" id="e1" source="n3">
+          <point y="170" x="-190"/>
+          <point y="60" x="-190"/>
+        </edge>
+        <edge type="inclusion" target="n1" id="e14" source="n19">
+          <point y="-70" x="-190"/>
+          <point y="-170" x="-190"/>
+        </edge>
+        <edge type="inclusion" target="n21" id="e15" source="n20">
+          <point y="-70" x="-70"/>
+          <point y="-170" x="-70"/>
+        </edge>
+        <edge type="inclusion" target="n4" id="e2" source="n5">
+          <point y="170" x="0"/>
+          <point y="60" x="0"/>
+        </edge>
+        <edge type="inclusion" target="n9" id="e5" source="n8">
+          <point y="-67" x="48"/>
+          <point y="-167" x="48"/>
+        </edge>
+        <edge type="inclusion" target="n10" id="e6" source="n11">
+          <point y="-70" x="170"/>
+          <point y="-170" x="170"/>
+        </edge>
+      </diagram>
+      <diagram height="5000" width="5000" name="Network_overview">
+        <node type="role" id="n11" color="#fcfcfc">
+          <geometry y="150" height="50" x="120" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#hasTopology</iri>
+          <label y="120" height="23" customSize="0" size="12" x="120" width="76"/>
+        </node>
+        <node type="domain-restriction" id="n12" color="#fcfcfc">
+          <geometry y="210" height="20" x="40" width="20"/>
+          <label y="188" height="23" customSize="0" size="12" x="40" width="39">exists</label>
+        </node>
+        <node type="concept" id="n16" color="#c2b078">
+          <geometry y="-300" height="50" x="460" width="110"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</iri>
+          <label y="-300" height="23" customSize="0" size="12" x="460" width="110"/>
+        </node>
+        <node type="concept" id="n19" color="#fcfcfc">
+          <geometry y="-180" height="50" x="760" width="155"/>
+          <iri>https://cdm.ovh/rsm/network/netw#InfrastructureManager</iri>
+          <label y="-180" height="23" customSize="0" size="12" x="760" width="155"/>
+        </node>
+        <node type="concept" id="n2" color="#fcfcfc">
+          <geometry y="50" height="50" x="300" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#RailwayNetwork</iri>
+          <label y="50" height="23" customSize="0" size="12" x="300" width="110"/>
+        </node>
+        <node type="concept" id="n20" color="#c2b078">
+          <geometry y="-300" height="50" x="600" width="110"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent</iri>
+          <label y="-300" height="23" customSize="0" size="12" x="600" width="110"/>
+        </node>
+        <node type="concept" id="n22" color="#fcfcfc">
+          <geometry y="-110" height="50" x="380" width="125"/>
+          <iri>https://cdm.ovh/rsm/network/netw#NetworkManagement</iri>
+          <label y="-110" height="23" customSize="0" size="12" x="380" width="125"/>
+        </node>
+        <node type="concept" id="n23" color="#fcfcfc">
+          <geometry y="-300" height="50" x="760" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#LegalEntity</iri>
+          <label y="-300" height="23" customSize="0" size="12" x="760" width="110"/>
+        </node>
+        <node type="concept" id="n24" color="#c2b078">
+          <geometry y="-60" height="50" x="620" width="110"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval</iri>
+          <label y="-60" height="23" customSize="0" size="12" x="620" width="110"/>
+        </node>
+        <node type="concept" id="n3" color="#fcfcfc">
+          <geometry y="210" height="50" x="250" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#NetworkTopology</iri>
+          <label y="210" height="23" customSize="0" size="12" x="250" width="110"/>
+        </node>
+        <node type="role" id="n30" color="#fcfcfc">
+          <geometry y="10" height="50" x="570" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#concernsNetwork</iri>
+          <label y="-20" height="23" customSize="0" size="12" x="570" width="101"/>
+        </node>
+        <node type="domain-restriction" id="n31" color="#fcfcfc">
+          <geometry y="10" height="20" x="490" width="20"/>
+          <label y="-12" height="23" customSize="0" size="12" x="490" width="39">exists</label>
+        </node>
+        <node type="range-restriction" id="n32" color="#000000">
+          <geometry y="10" height="20" x="640" width="20"/>
+          <label y="-12" height="23" customSize="0" size="12" x="640" width="39">exists</label>
+        </node>
+        <node type="role" id="n33" color="#fcfcfc">
+          <geometry y="-180" height="50" x="570" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#hasInfrastructureManager</iri>
+          <label y="-210" height="23" customSize="0" size="12" x="570" width="146"/>
+        </node>
+        <node type="range-restriction" id="n34" color="#000000">
+          <geometry y="-180" height="20" x="640" width="20"/>
+          <label y="-202" height="23" customSize="0" size="12" x="640" width="39">exists</label>
+        </node>
+        <node type="domain-restriction" id="n35" color="#fcfcfc">
+          <geometry y="-180" height="20" x="490" width="20"/>
+          <label y="-202" height="23" customSize="0" size="12" x="490" width="39">exists</label>
+        </node>
+        <node type="concept" id="n36" color="#fcfcfc">
+          <geometry y="120" height="50" x="-90" width="135"/>
+          <iri>https://cdm.ovh/rsm/network/netw#NetworkLayout</iri>
+          <label y="120" height="23" customSize="0" size="12" x="-90" width="135"/>
+        </node>
+        <node type="concept" id="n38" color="#fcfcfc">
+          <geometry y="380" height="50" x="-180" width="155"/>
+          <iri>https://cdm.ovh/rsm/network/netw#PlannedNetworkLayout</iri>
+          <label y="372" height="23" customSize="0" size="12" x="-180" width="155"/>
+        </node>
+        <node type="concept" id="n39" color="#fcfcfc">
+          <geometry y="380" height="50" x="0" width="155"/>
+          <iri>https://cdm.ovh/rsm/network/netw#ObservedNetworkLayout</iri>
+          <label y="372" height="23" customSize="0" size="12" x="0" width="155"/>
+        </node>
+        <node type="concept" id="n4" color="#c2b078">
+          <geometry y="140" height="50" x="250" width="110"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description</iri>
+          <label y="140" height="23" customSize="0" size="12" x="250" width="110"/>
+        </node>
+        <node type="concept" id="n40" color="#c2b078">
+          <geometry y="370" height="50" x="250" width="110"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval</iri>
+          <label y="370" height="23" customSize="0" size="12" x="250" width="110"/>
+        </node>
+        <node type="concept" id="n5" color="#c2b078">
+          <geometry y="-300" height="50" x="120" width="110"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation</iri>
+          <label y="-300" height="23" customSize="0" size="12" x="120" width="110"/>
+        </node>
+        <node type="domain-restriction" id="n52" color="#fcfcfc">
+          <geometry y="-110" height="20" x="490" width="20"/>
+          <label y="-132" height="23" customSize="0" size="12" x="490" width="39">forall</label>
+        </node>
+        <node type="domain-restriction" id="n54" color="#fcfcfc">
+          <geometry y="330" height="20" x="120" width="20"/>
+          <label y="308" height="23" customSize="0" size="12" x="120" width="39">forall</label>
+        </node>
+        <node type="concept" id="n56" color="#c2b078">
+          <geometry y="140" height="50" x="610" width="110"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject</iri>
+          <label y="140" height="23" customSize="0" size="12" x="610" width="110"/>
+        </node>
+        <node type="concept" id="n57" color="#fcfcfc">
+          <geometry y="210" height="50" x="610" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#TopologyGraph</iri>
+          <label y="210" height="23" customSize="0" size="12" x="610" width="110"/>
+        </node>
+        <node type="role" id="n58" color="#fcfcfc">
+          <geometry y="210" height="50" x="430" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#serializedAs</iri>
+          <label y="180" height="23" customSize="0" size="12" x="430" width="72"/>
+        </node>
+        <node type="domain-restriction" id="n59" color="#fcfcfc">
+          <geometry y="210" height="20" x="350" width="20"/>
+          <label y="188" height="23" customSize="0" size="12" x="350" width="39">exists</label>
+        </node>
+        <node type="range-restriction" id="n60" color="#000000">
+          <geometry y="210" height="20" x="510" width="20"/>
+          <label y="188" height="23" customSize="0" size="12" x="510" width="39">exists</label>
+        </node>
+        <node type="role" id="n61" color="#16ccef">
+          <geometry y="-120" height="50" x="610" width="70"/>
+          <iri>https://cdm.ovh/rsm/time/time#hasValidityInterval</iri>
+          <label y="-150" height="23" customSize="0" size="12" x="610" width="105"/>
+        </node>
+        <node type="role" id="n62" color="#16ccef">
+          <geometry y="290" height="50" x="250" width="70"/>
+          <iri>https://cdm.ovh/rsm/time/time#hasValidityInterval</iri>
+          <label y="260" height="23" customSize="0" size="12" x="250" width="105"/>
+        </node>
+        <node type="role" id="n7" color="#fcfcfc">
+          <geometry y="50" height="50" x="120" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#involvesNetwork</iri>
+          <label y="20" height="23" customSize="0" size="12" x="120" width="96"/>
+        </node>
+        <node type="domain-restriction" id="n8" color="#fcfcfc">
+          <geometry y="50" height="20" x="40" width="20"/>
+          <label y="28" height="23" customSize="0" size="12" x="40" width="39">exists</label>
+        </node>
+        <node type="range-restriction" id="n9" color="#000000">
+          <geometry y="50" height="20" x="190" width="20"/>
+          <label y="28" height="23" customSize="0" size="12" x="190" width="39">exists</label>
+        </node>
+        <edge type="inclusion" target="n4" id="e1" source="n3">
+          <point y="210" x="250"/>
+          <point y="140" x="250"/>
+        </edge>
+        <edge type="input" target="n12" id="e11" source="n11">
+          <point y="150" x="120"/>
+          <point y="210" x="40"/>
+        </edge>
+        <edge type="inclusion" target="n16" id="e19" source="n20">
+          <point y="-300" x="600"/>
+          <point y="-300" x="460"/>
+        </edge>
+        <edge type="inclusion" target="n5" id="e20" source="n22">
+          <point y="-110" x="380"/>
+          <point y="-220" x="380"/>
+          <point y="-220" x="120"/>
+          <point y="-300" x="120"/>
+        </edge>
+        <edge type="inclusion" target="n23" id="e21" source="n19">
+          <point y="-180" x="760"/>
+          <point y="-300" x="760"/>
+        </edge>
+        <edge type="inclusion" target="n20" id="e22" source="n23">
+          <point y="-300" x="760"/>
+          <point y="-300" x="600"/>
+        </edge>
+        <edge type="input" target="n31" id="e28" source="n30">
+          <point y="10" x="570"/>
+          <point y="10" x="490"/>
+        </edge>
+        <edge type="input" target="n32" id="e29" source="n30">
+          <point y="10" x="570"/>
+          <point y="10" x="640"/>
+        </edge>
+        <edge type="inclusion" target="n2" id="e3" source="n9">
+          <point y="50" x="190"/>
+          <point y="50" x="300"/>
+        </edge>
+        <edge type="inclusion" target="n22" id="e30" source="n31">
+          <point y="10" x="490"/>
+          <point y="-110" x="380"/>
+        </edge>
+        <edge type="inclusion" target="n2" id="e31" source="n32">
+          <point y="10" x="640"/>
+          <point y="50" x="640"/>
+          <point y="50" x="300"/>
+        </edge>
+        <edge type="input" target="n34" id="e32" source="n33">
+          <point y="-180" x="570"/>
+          <point y="-180" x="640"/>
+        </edge>
+        <edge type="input" target="n35" id="e33" source="n33">
+          <point y="-180" x="570"/>
+          <point y="-180" x="490"/>
+        </edge>
+        <edge type="inclusion" target="n22" id="e34" source="n35">
+          <point y="-180" x="490"/>
+          <point y="-110" x="380"/>
+        </edge>
+        <edge type="inclusion" target="n19" id="e35" source="n34">
+          <point y="-180" x="640"/>
+          <point y="-180" x="760"/>
+        </edge>
+        <edge type="inclusion" target="n36" id="e36" source="n8">
+          <point y="50" x="40"/>
+          <point y="100" x="40"/>
+          <point y="120" x="-90"/>
+        </edge>
+        <edge type="inclusion" target="n5" id="e38" source="n36">
+          <point y="120" x="-90"/>
+          <point y="-220" x="-90"/>
+          <point y="-220" x="120"/>
+          <point y="-300" x="120"/>
+        </edge>
+        <edge type="inclusion" target="n36" id="e40" source="n38">
+          <point y="380" x="-180"/>
+          <point y="290" x="-180"/>
+          <point y="290" x="-90"/>
+          <point y="120" x="-90"/>
+        </edge>
+        <edge type="inclusion" target="n36" id="e41" source="n39">
+          <point y="380" x="0"/>
+          <point y="290" x="0"/>
+          <point y="290" x="-90"/>
+          <point y="120" x="-90"/>
+        </edge>
+        <edge type="input" target="n9" id="e5" source="n7">
+          <point y="50" x="120"/>
+          <point y="50" x="190"/>
+        </edge>
+        <edge type="input" target="n54" id="e56" source="n40">
+          <point y="370" x="250"/>
+          <point y="330" x="120"/>
+        </edge>
+        <edge type="input" target="n52" id="e59" source="n24">
+          <point y="-60" x="620"/>
+          <point y="-110" x="490"/>
+        </edge>
+        <edge type="input" target="n8" id="e6" source="n7">
+          <point y="50" x="120"/>
+          <point y="50" x="40"/>
+        </edge>
+        <edge type="inclusion" target="n56" id="e72" source="n57">
+          <point y="210" x="610"/>
+          <point y="140" x="610"/>
+        </edge>
+        <edge type="input" target="n59" id="e73" source="n58">
+          <point y="210" x="430"/>
+          <point y="210" x="350"/>
+        </edge>
+        <edge type="input" target="n60" id="e74" source="n58">
+          <point y="210" x="430"/>
+          <point y="210" x="510"/>
+        </edge>
+        <edge type="inclusion" target="n3" id="e75" source="n59">
+          <point y="210" x="350"/>
+          <point y="210" x="250"/>
+        </edge>
+        <edge type="inclusion" target="n57" id="e76" source="n60">
+          <point y="210" x="510"/>
+          <point y="210" x="610"/>
+        </edge>
+        <edge type="input" target="n12" id="e79" source="n3">
+          <point y="210" x="250"/>
+          <point y="210" x="40"/>
+        </edge>
+        <edge type="inclusion" target="n12" id="e80" source="n36">
+          <point y="120" x="-90"/>
+          <point y="140" x="40"/>
+          <point y="210" x="40"/>
+        </edge>
+        <edge type="inclusion" target="n52" id="e81" source="n22">
+          <point y="-110" x="380"/>
+          <point y="-110" x="490"/>
+        </edge>
+        <edge type="inclusion" target="n54" id="e82" source="n36">
+          <point y="120" x="-90"/>
+          <point y="330" x="120"/>
+        </edge>
+        <edge type="input" target="n52" id="e83" source="n61">
+          <point y="-120" x="610"/>
+          <point y="-110" x="490"/>
+        </edge>
+        <edge type="input" target="n54" id="e84" source="n62">
+          <point y="290" x="250"/>
+          <point y="330" x="120"/>
+        </edge>
+      </diagram>
+      <diagram height="5000" width="5000" name="Network_parts">
+        <node type="concept" id="n0" color="#fcfcfc">
+          <geometry y="30" height="50" x="0" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#NetEntity</iri>
+          <label y="30" height="23" customSize="0" size="12" x="0" width="110"/>
+        </node>
+        <node type="concept" id="n1" color="#c2b078">
+          <geometry y="-200" height="50" x="-80" width="110"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact</iri>
+          <label y="-200" height="23" customSize="0" size="12" x="-80" width="110"/>
+        </node>
+        <node type="concept" id="n10" color="#fcfcfc">
+          <geometry y="130" height="50" x="0" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#ContainingEntity</iri>
+          <label y="130" height="23" customSize="0" size="12" x="0" width="110"/>
+        </node>
+        <node type="concept" id="n11" color="#fcfcfc">
+          <geometry y="30" height="50" x="-160" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#SubNetwork</iri>
+          <label y="30" height="23" customSize="0" size="12" x="-160" width="110"/>
+        </node>
+        <node type="disjoint-union" id="n12" color="#000000">
+          <geometry y="-50" height="30" x="-80" width="50"/>
+        </node>
+        <node type="concept" id="n13" color="#fcfcfc">
+          <geometry y="-120" height="50" x="-80" width="195"/>
+          <iri>https://cdm.ovh/rsm/network/netw#RailwayInfrastructureArtefact</iri>
+          <label y="-120" height="23" customSize="0" size="12" x="-80" width="195"/>
+        </node>
+        <node type="range-restriction" id="n14" color="#000000">
+          <geometry y="-60" height="20" x="280" width="20"/>
+          <label y="-82" height="23" customSize="0" size="12" x="280" width="39">exists</label>
+        </node>
+        <node type="domain-restriction" id="n15" color="#fcfcfc">
+          <geometry y="0" height="20" x="280" width="20"/>
+          <label y="-22" height="23" customSize="0" size="12" x="280" width="39">exists</label>
+        </node>
+        <node type="concept" id="n16" color="#fcfcfc">
+          <geometry y="-60" height="50" x="370" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#NetEntity</iri>
+          <label y="-60" height="23" customSize="0" size="12" x="370" width="110"/>
+        </node>
+        <node type="concept" id="n17" color="#fcfcfc">
+          <geometry y="0" height="50" x="370" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#ContainingEntity</iri>
+          <label y="0" height="23" customSize="0" size="12" x="370" width="110"/>
+        </node>
+        <node type="concept" id="n2" color="#fcfcfc">
+          <geometry y="200" height="50" x="0" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#RailwayNetwork</iri>
+          <label y="200" height="23" customSize="0" size="12" x="0" width="110"/>
+        </node>
+        <node type="role" id="n6" color="#fcfcfc">
+          <geometry y="80" height="50" x="180" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#containsEntity</iri>
+          <label y="50" height="23" customSize="0" size="12" x="180" width="83"/>
+        </node>
+        <node type="domain-restriction" id="n7" color="#fcfcfc">
+          <geometry y="130" height="20" x="100" width="20"/>
+          <label y="108" height="23" customSize="0" size="12" x="100" width="39">exists</label>
+        </node>
+        <node type="range-restriction" id="n8" color="#000000">
+          <geometry y="30" height="20" x="100" width="20"/>
+          <label y="8" height="23" customSize="0" size="12" x="100" width="39">exists</label>
+        </node>
+        <node type="role" id="n9" color="#fcfcfc">
+          <geometry y="-30" height="50" x="180" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#containsEntityTransitive</iri>
+          <label y="-60" height="23" customSize="0" size="12" x="180" width="135"/>
+        </node>
+        <edge type="inclusion" target="n0" id="e10" source="n8">
+          <point y="30" x="100"/>
+          <point y="30" x="0"/>
+        </edge>
+        <edge type="input" target="n7" id="e12" source="n6">
+          <point y="80" x="180"/>
+          <point y="130" x="100"/>
+        </edge>
+        <edge type="input" target="n8" id="e13" source="n6">
+          <point y="80" x="180"/>
+          <point y="30" x="100"/>
+        </edge>
+        <edge type="inclusion" target="n9" id="e14" source="n6">
+          <point y="80" x="180"/>
+          <point y="-30" x="180"/>
+        </edge>
+        <edge type="inclusion" target="n10" id="e15" source="n7">
+          <point y="130" x="100"/>
+          <point y="130" x="0"/>
+        </edge>
+        <edge type="inclusion" target="n10" id="e16" source="n2">
+          <point y="200" x="0"/>
+          <point y="130" x="0"/>
+        </edge>
+        <edge type="inclusion" target="n0" id="e17" source="n10">
+          <point y="130" x="0"/>
+          <point y="30" x="0"/>
+        </edge>
+        <edge type="inclusion" target="n13" id="e21" source="n12">
+          <point y="-50" x="-80"/>
+          <point y="-120" x="-80"/>
+        </edge>
+        <edge type="inclusion" target="n1" id="e22" source="n13">
+          <point y="-120" x="-80"/>
+          <point y="-200" x="-80"/>
+        </edge>
+        <edge type="input" target="n12" id="e23" source="n11">
+          <point y="30" x="-160"/>
+          <point y="-50" x="-80"/>
+        </edge>
+        <edge type="input" target="n12" id="e24" source="n0">
+          <point y="30" x="0"/>
+          <point y="-50" x="-80"/>
+        </edge>
+        <edge type="input" target="n14" id="e25" source="n9">
+          <point y="-30" x="180"/>
+          <point y="-60" x="280"/>
+        </edge>
+        <edge type="input" target="n15" id="e26" source="n9">
+          <point y="-30" x="180"/>
+          <point y="0" x="280"/>
+        </edge>
+        <edge type="inclusion" target="n16" id="e27" source="n14">
+          <point y="-60" x="280"/>
+          <point y="-60" x="370"/>
+        </edge>
+        <edge type="inclusion" target="n17" id="e28" source="n15">
+          <point y="0" x="280"/>
+          <point y="0" x="370"/>
+        </edge>
+      </diagram>
+      <diagram height="5000" width="5000" name="Property_details">
+        <node type="concept" id="n10" color="#fcfcfc">
+          <geometry y="-420" height="50" x="-740" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#NetworkTopology</iri>
+          <label y="-420" height="23" customSize="0" size="12" x="-740" width="110"/>
+        </node>
+        <node type="concept" id="n11" color="#fcfcfc">
+          <geometry y="-420" height="50" x="-1100" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#NetworkLayout</iri>
+          <label y="-420" height="23" customSize="0" size="12" x="-1100" width="110"/>
+        </node>
+        <node type="role" id="n2" color="#fcfcfc">
+          <geometry y="-150" height="50" x="-930" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#isSubNetworkOf</iri>
+          <label y="-180" height="23" customSize="0" size="12" x="-930" width="94"/>
+        </node>
+        <node type="role-inverse" id="n21" color="#fcfcfc">
+          <geometry y="-240" height="30" x="-1030" width="50"/>
+          <label y="-240" height="23" customSize="0" size="12" x="-1030" width="23"/>
+        </node>
+        <node type="role" id="n22" color="#fcfcfc">
+          <geometry y="-240" height="50" x="-1120" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#isContainedIn</iri>
+          <label y="-270" height="23" customSize="0" size="12" x="-1120" width="81"/>
+        </node>
+        <node type="role" id="n23" color="#fcfcfc">
+          <geometry y="-240" height="50" x="-930" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#containsEntity</iri>
+          <label y="-270" height="23" customSize="0" size="12" x="-930" width="83"/>
+        </node>
+        <node type="role" id="n32" color="#fcfcfc">
+          <geometry y="-330" height="50" x="-1120" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#isContainedInTransitive</iri>
+          <label y="-360" height="23" customSize="0" size="12" x="-1120" width="132"/>
+        </node>
+        <node type="role" id="n4" color="#fcfcfc">
+          <geometry y="-150" height="50" x="-1124" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#hasSubNetwork</iri>
+          <label y="-180" height="23" customSize="0" size="12" x="-1124" width="92"/>
+        </node>
+        <node type="role-inverse" id="n6" color="#fcfcfc">
+          <geometry y="-150" height="30" x="-1030" width="50"/>
+          <label y="-150" height="23" customSize="0" size="12" x="-1030" width="23"/>
+        </node>
+        <node type="role" id="n7" color="#fcfcfc">
+          <geometry y="-420" height="50" x="-920" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#hasTopology</iri>
+          <label y="-450" height="23" customSize="0" size="12" x="-920" width="76"/>
+        </node>
+        <node type="domain-restriction" id="n8" color="#fcfcfc">
+          <geometry y="-420" height="20" x="-1000" width="20"/>
+          <label y="-442" height="23" customSize="0" size="12" x="-1000" width="39">exists</label>
+        </node>
+        <node type="range-restriction" id="n9" color="#000000">
+          <geometry y="-420" height="20" x="-840" width="20"/>
+          <label y="-442" height="23" customSize="0" size="12" x="-840" width="39">exists</label>
+        </node>
+        <edge type="input" target="n21" id="e18" source="n22">
+          <point y="-240" x="-1120"/>
+          <point y="-240" x="-1030"/>
+        </edge>
+        <edge type="equivalence" target="n2" id="e2" source="n6">
+          <point y="-150" x="-1030"/>
+          <point y="-150" x="-930"/>
+        </edge>
+        <edge type="equivalence" target="n23" id="e20" source="n21">
+          <point y="-240" x="-1030"/>
+          <point y="-240" x="-930"/>
+        </edge>
+        <edge type="inclusion" target="n32" id="e31" source="n22">
+          <point y="-240" x="-1120"/>
+          <point y="-330" x="-1120"/>
+        </edge>
+        <edge type="input" target="n6" id="e5" source="n4">
+          <point y="-150" x="-1124"/>
+          <point y="-150" x="-1030"/>
+        </edge>
+        <edge type="input" target="n8" id="e6" source="n7">
+          <point y="-420" x="-920"/>
+          <point y="-420" x="-1000"/>
+        </edge>
+        <edge type="input" target="n9" id="e7" source="n7">
+          <point y="-420" x="-920"/>
+          <point y="-420" x="-840"/>
+        </edge>
+        <edge type="inclusion" target="n10" id="e8" source="n9">
+          <point y="-420" x="-840"/>
+          <point y="-420" x="-740"/>
+        </edge>
+        <edge type="inclusion" target="n11" id="e9" source="n8">
+          <point y="-420" x="-1000"/>
+          <point y="-420" x="-1100"/>
+        </edge>
+      </diagram>
+      <diagram height="5000" width="5000" name="Sub-networks">
+        <node type="concept" id="n1" color="#fcfcfc">
+          <geometry y="160" height="50" x="-60" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#SubNetwork</iri>
+          <label y="160" height="23" customSize="0" size="12" x="-60" width="110"/>
+        </node>
+        <node type="domain-restriction" id="n12" color="#fcfcfc">
+          <geometry y="60" height="20" x="210" width="20"/>
+          <label y="38" height="23" customSize="0" size="12" x="210" width="39">exists</label>
+        </node>
+        <node type="range-restriction" id="n13" color="#000000">
+          <geometry y="60" height="20" x="50" width="20"/>
+          <label y="38" height="23" customSize="0" size="12" x="50" width="39">exists</label>
+        </node>
+        <node type="role" id="n14" color="#fcfcfc">
+          <geometry y="60" height="50" x="130" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#selectedFromNetwork</iri>
+          <label y="30" height="23" customSize="0" size="12" x="130" width="125"/>
+        </node>
+        <node type="role" id="n15" color="#fcfcfc">
+          <geometry y="240" height="50" x="420" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#hasSelectionCriterion</iri>
+          <label y="210" height="23" customSize="0" size="12" x="420" width="121"/>
+        </node>
+        <node type="domain-restriction" id="n16" color="#fcfcfc">
+          <geometry y="240" height="20" x="340" width="20"/>
+          <label y="218" height="23" customSize="0" size="12" x="340" width="39">exists</label>
+        </node>
+        <node type="range-restriction" id="n17" color="#000000">
+          <geometry y="240" height="20" x="500" width="20"/>
+          <label y="218" height="23" customSize="0" size="12" x="500" width="39">exists</label>
+        </node>
+        <node type="concept" id="n2" color="#fcfcfc">
+          <geometry y="110" height="50" x="340" width="155"/>
+          <iri>https://cdm.ovh/rsm/network/netw#NetEntityCollection</iri>
+          <label y="110" height="23" customSize="0" size="12" x="340" width="155"/>
+        </node>
+        <node type="domain-restriction" id="n20" color="#fcfcfc">
+          <geometry y="60" height="20" x="-230" width="20"/>
+          <label y="38" height="23" customSize="0" size="12" x="-230" width="39">exists</label>
+        </node>
+        <node type="range-restriction" id="n21" color="#000000">
+          <geometry y="160" height="20" x="-230" width="20"/>
+          <label y="138" height="23" customSize="0" size="12" x="-230" width="39">exists</label>
+        </node>
+        <node type="role" id="n23" color="#c2b078">
+          <geometry y="70" height="50" x="540" width="70"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember</iri>
+          <label y="40" height="23" customSize="0" size="12" x="540" width="71"/>
+        </node>
+        <node type="domain-restriction" id="n24" color="#fcfcfc">
+          <geometry y="110" height="20" x="460" width="20"/>
+          <label y="88" height="23" customSize="0" size="12" x="460" width="39">forall</label>
+        </node>
+        <node type="concept" id="n25" color="#fcfcfc">
+          <geometry y="160" height="50" x="540" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#NetEntity</iri>
+          <label y="160" height="23" customSize="0" size="12" x="540" width="110"/>
+        </node>
+        <node type="domain-restriction" id="n26" color="#fcfcfc">
+          <geometry y="160" height="20" x="50" width="20"/>
+          <label y="138" height="23" customSize="0" size="12" x="50" width="39">exists</label>
+        </node>
+        <node type="role" id="n27" color="#fcfcfc">
+          <geometry y="160" height="50" x="130" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#definedByCollection</iri>
+          <label y="130" height="23" customSize="0" size="12" x="130" width="113"/>
+        </node>
+        <node type="range-restriction" id="n28" color="#000000">
+          <geometry y="160" height="20" x="210" width="20"/>
+          <label y="138" height="23" customSize="0" size="12" x="210" width="39">exists</label>
+        </node>
+        <node type="union" id="n30" color="#fcfcfc">
+          <geometry y="60" height="30" x="-90" width="50"/>
+          <label y="60" height="23" customSize="0" size="12" x="-90" width="18"/>
+        </node>
+        <node type="concept" id="n31" color="#fcfcfc">
+          <geometry y="-20" height="50" x="-20" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#SubNetwork</iri>
+          <label y="-20" height="23" customSize="0" size="12" x="-20" width="110"/>
+        </node>
+        <node type="concept" id="n32" color="#fcfcfc">
+          <geometry y="-20" height="50" x="-150" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#RailwayNetwork</iri>
+          <label y="-20" height="23" customSize="0" size="12" x="-150" width="110"/>
+        </node>
+        <node type="concept" id="n7" color="#fcfcfc">
+          <geometry y="240" height="50" x="600" width="125"/>
+          <iri>https://cdm.ovh/rsm/network/netw#SelectionCriterion</iri>
+          <label y="240" height="23" customSize="0" size="12" x="600" width="125"/>
+        </node>
+        <node type="role" id="n9" color="#fcfcfc">
+          <geometry y="110" height="50" x="-320" width="70"/>
+          <iri>https://cdm.ovh/rsm/network/netw#hasSubNetwork</iri>
+          <label y="80" height="23" customSize="0" size="12" x="-320" width="92"/>
+        </node>
+        <edge type="inclusion" target="n1" id="e10" source="n21">
+          <point y="160" x="-230"/>
+          <point y="160" x="-60"/>
+        </edge>
+        <edge type="inclusion" target="n2" id="e12" source="n12">
+          <point y="60" x="210"/>
+          <point y="110" x="340"/>
+        </edge>
+        <edge type="input" target="n13" id="e13" source="n14">
+          <point y="60" x="130"/>
+          <point y="60" x="50"/>
+        </edge>
+        <edge type="input" target="n12" id="e14" source="n14">
+          <point y="60" x="130"/>
+          <point y="60" x="210"/>
+        </edge>
+        <edge type="input" target="n16" id="e15" source="n15">
+          <point y="240" x="420"/>
+          <point y="240" x="340"/>
+        </edge>
+        <edge type="inclusion" target="n7" id="e18" source="n17">
+          <point y="240" x="500"/>
+          <point y="240" x="600"/>
+        </edge>
+        <edge type="input" target="n17" id="e19" source="n15">
+          <point y="240" x="420"/>
+          <point y="240" x="500"/>
+        </edge>
+        <edge type="input" target="n24" id="e24" source="n23">
+          <point y="70" x="540"/>
+          <point y="110" x="460"/>
+        </edge>
+        <edge type="input" target="n24" id="e25" source="n25">
+          <point y="160" x="540"/>
+          <point y="110" x="460"/>
+        </edge>
+        <edge type="inclusion" target="n24" id="e28" source="n2">
+          <point y="110" x="340"/>
+          <point y="110" x="460"/>
+        </edge>
+        <edge type="inclusion" target="n1" id="e29" source="n26">
+          <point y="160" x="50"/>
+          <point y="160" x="-60"/>
+        </edge>
+        <edge type="inclusion" target="n2" id="e30" source="n28">
+          <point y="160" x="210"/>
+          <point y="110" x="340"/>
+        </edge>
+        <edge type="input" target="n28" id="e31" source="n27">
+          <point y="160" x="130"/>
+          <point y="160" x="210"/>
+        </edge>
+        <edge type="input" target="n26" id="e32" source="n27">
+          <point y="160" x="130"/>
+          <point y="160" x="50"/>
+        </edge>
+        <edge type="inclusion" target="n2" id="e33" source="n16">
+          <point y="240" x="340"/>
+          <point y="110" x="340"/>
+        </edge>
+        <edge type="input" target="n30" id="e36" source="n32">
+          <point y="-20" x="-150"/>
+          <point y="60" x="-90"/>
+        </edge>
+        <edge type="input" target="n30" id="e37" source="n31">
+          <point y="-20" x="-20"/>
+          <point y="60" x="-90"/>
+        </edge>
+        <edge type="inclusion" target="n30" id="e40" source="n20">
+          <point y="60" x="-230"/>
+          <point y="60" x="-90"/>
+        </edge>
+        <edge type="inclusion" target="n30" id="e41" source="n13">
+          <point y="60" x="50"/>
+          <point y="60" x="-90"/>
+        </edge>
+        <edge type="input" target="n20" id="e8" source="n9">
+          <point y="110" x="-320"/>
+          <point y="60" x="-230"/>
+        </edge>
+        <edge type="input" target="n21" id="e9" source="n9">
+          <point y="110" x="-320"/>
+          <point y="160" x="-230"/>
+        </edge>
+      </diagram>
+    </diagrams>
+  </project>
+</graphol>
