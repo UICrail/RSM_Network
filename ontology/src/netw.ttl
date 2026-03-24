@@ -10,7 +10,7 @@
 @base <https://cdm.ovh/rsm/network/netw> .
 
 <https://cdm.ovh/rsm/network/netw> rdf:type owl:Ontology ;
-                                    owl:versionIRI <urn:absolute:0.1> ;
+                                    owl:versionIRI <https://cdm.ovh/rsm/network/netw/0.1> ;
                                     owl:imports <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ,
                                                 <https://cdm.ovh/rsm/time/time> .
 
@@ -94,7 +94,7 @@ netw:hasSubNetwork rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf dul:hasPart ;
                    owl:inverseOf netw:isSubNetworkOf ;
                    rdfs:domain [ rdf:type owl:Class ;
-                                 owl:unionOf ( netw:RailwayNetwork
+                                 owl:unionOf ( netw:ContainingEntity
                                                netw:SubNetwork
                                              )
                                ] ;
@@ -141,7 +141,7 @@ netw:isSubNetworkOf rdf:type owl:ObjectProperty ;
 netw:selectedFromNetwork rdf:type owl:ObjectProperty ;
                          rdfs:domain netw:NetEntityCollection ;
                          rdfs:range [ rdf:type owl:Class ;
-                                      owl:unionOf ( netw:RailwayNetwork
+                                      owl:unionOf ( netw:ContainingEntity
                                                     netw:SubNetwork
                                                   )
                                     ] ;
