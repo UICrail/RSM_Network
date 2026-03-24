@@ -2,7 +2,7 @@
 
 RSM Network ontology.
 
-Defines railway infrastructure in a timed relation with topology and with infrasrtructure management.
+Defines railway infrastructure in a timed relation with topology and with infrastructure management.
 
 The infrastructure management artefacts shall be moved to a specialized module later on.
 
