@@ -1,7 +1,7 @@
 # OWL Profile Validation Report
 
 **Ontology**: ontology/src/core.ttl
-**Date**: 2026-03-24 16:24:23 UTC
+**Date**: 2026-03-24 16:27:32 UTC
 
 ---
 
