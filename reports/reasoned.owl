@@ -1,0 +1,1036 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://cdm.ovh/rsm/network/netw#"
+     xml:base="https://cdm.ovh/rsm/network/netw"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:netw="https://cdm.ovh/rsm/network/netw#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rsmt="https://cdm.ovh/rsm/time/time#">
+    <owl:Ontology rdf:about="https://cdm.ovh/rsm/network/netw">
+        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/network/netw/0.1"/>
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+        <owl:imports rdf:resource="https://cdm.ovh/rsm/time/time"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasProperPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasProperPart"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies"/>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#concernsNetwork -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#concernsNetwork">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/network/netw#NetworkManagement"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/network/netw#RailwayNetwork"/>
+        <rdfs:label xml:lang="en">concerns network</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#containsEntity -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#containsEntity">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasProperPart"/>
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/network/netw#containsEntityTransitive"/>
+        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/network/netw#isContainedIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/network/netw#ContainingEntity"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/network/netw#NetEntity"/>
+        <rdfs:comment xml:lang="en">Refers to entities that are proper parts of the containing entity. &apos;Proper&apos; entails that the property is irreflexive, and it is characterized as such in this version of the ontology. As container entities can contain other containers, use the transitive property closure to find all entities contained, directly or indirectly, in a container.</rdfs:comment>
+        <rdfs:label>contains entity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#containsEntityTransitive -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#containsEntityTransitive">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/network/netw#ContainingEntity"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/network/netw#NetEntity"/>
+        <rdfs:comment xml:lang="en">use for retrieving all entities contained, directly or indirectly, in a container</rdfs:comment>
+        <rdfs:label>contains entity (transitive)</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#definedByCollection -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#definedByCollection">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/network/netw#SubNetwork"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/network/netw#NetEntityCollection"/>
+        <rdfs:label xml:lang="en">defined by collection</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#hasInfrastructureManager -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#hasInfrastructureManager">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/network/netw#NetworkManagement"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/network/netw#InfrastructureManager"/>
+        <rdfs:label xml:lang="en">has Infrastructure Manager</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#hasSelectionCriterion -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#hasSelectionCriterion">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/network/netw#NetEntityCollection"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/network/netw#SelectionCriterion"/>
+        <rdfs:label xml:lang="en">has selection criterion</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#hasSubNetwork -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#hasSubNetwork">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
+        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/network/netw#isSubNetworkOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/network/netw#ContainingEntity"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/network/netw#SubNetwork"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/network/netw#SubNetwork"/>
+        <rdfs:comment xml:lang="en">Links an infrastructure artefact (network or sub-network) to its sub-networks.</rdfs:comment>
+        <rdfs:label xml:lang="en">has sub network</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#hasTopology -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#hasTopology">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/network/netw#NetworkLayout"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/network/netw#NetworkTopology"/>
+        <rdfs:label xml:lang="en">has topology</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#involvesNetwork -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#involvesNetwork">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/network/netw#NetworkLayout"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/network/netw#RailwayNetwork"/>
+        <rdfs:label>involvesNetwork</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#isContainedIn -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#isContainedIn">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/network/netw#isContainedInTransitive"/>
+        <rdfs:label xml:lang="en">is contained in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#isContainedInTransitive -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#isContainedInTransitive">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label>is contained in (transitive)</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#isSubNetworkOf -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#isSubNetworkOf">
+        <rdfs:label>is subnetwork of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#selectedFromNetwork -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#selectedFromNetwork">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/network/netw#NetEntityCollection"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/network/netw#ContainingEntity"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/network/netw#SubNetwork"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">selected from network</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#serializedAs -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/network/netw#serializedAs">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/network/netw#NetworkTopology"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/network/netw#TopologyGraph"/>
+        <rdfs:label xml:lang="en">serialized as</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/time/time#hasValidityInterval -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/time/time#hasValidityInterval"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Abstract -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Abstract">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Amount -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Amount">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalBody"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ChemicalObject -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ChemicalObject">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalBody"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Classification -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Classification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeIndexedRelation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collection -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collection">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collective -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collective">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collection"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Configuration -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Configuration">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collection"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Contract -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Contract">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Design -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Design">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedSubstance -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedSubstance">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FunctionalSubstance"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Diagnosis -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Diagnosis">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FormalEntity -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FormalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Abstract"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FunctionalSubstance -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FunctionalSubstance">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#LocalConcept -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#LocalConcept">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Narrative -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Narrative">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Norm -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Norm">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ObjectAggregate -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ObjectAggregate">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organism -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organism">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parthood -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parthood">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeIndexedRelation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Pattern -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Pattern">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Relation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Personification -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Personification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalBody -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalBody">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PlanExecution -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PlanExecution">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Project -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Project">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Abstract"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Relation -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Relation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Right -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Right">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Set -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Set">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FormalEntity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObjectAttribute -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObjectAttribute">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialRelation -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialRelation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Relation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpaceRegion -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpaceRegion">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpatioTemporalRegion -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpatioTemporalRegion">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalBody"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeIndexedRelation -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeIndexedRelation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Transition -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Transition">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeIndexedRelation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TypeCollection -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TypeCollection">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collection"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#UnitOfMeasure -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#UnitOfMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#WorkflowExecution -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#WorkflowExecution">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PlanExecution"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#ContainingEntity -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#ContainingEntity">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/network/netw#NetEntity"/>
+        <rdfs:comment xml:lang="en">A NetEntity that may contain other net entities, to build an &apos;authoritative&apos; breakdown of net entities. The way the breakdown is defined (by area first, or by subsystem first...) is left to the data owner.</rdfs:comment>
+        <rdfs:label xml:lang="en">Containing entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#InfrastructureManager -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#InfrastructureManager">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/network/netw#LegalEntity"/>
+        <rdfs:label xml:lang="en">Infrastructure manager</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#LegalEntity -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#LegalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent"/>
+        <rdfs:comment xml:lang="en">Provisional. Ultimately, should reference some other module or ontology.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#NetEntity -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#NetEntity">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/network/netw#RailwayInfrastructureArtefact"/>
+        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/network/netw#SubNetwork"/>
+        <rdfs:label xml:lang="en">Net entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#NetEntityCollection -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#NetEntityCollection">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collection"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember"/>
+                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/network/netw#NetEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A collection of net entities, typically selected from one or more railway networks, and possibly used to define a sub-network. Collection membership (using dul:hasMember) is user-defined, and has no formal relationship with netw:containsEntity.</rdfs:comment>
+        <rdfs:label>Net Entity collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#NetworkLayout -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#NetworkLayout">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/network/netw#hasTopology"/>
+                <owl:someValuesFrom rdf:resource="https://cdm.ovh/rsm/network/netw#NetworkTopology"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/time/time#hasValidityInterval"/>
+                <owl:allValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Associates a Railway Network with a topology. Validity interval, if provided, bounds the validity of this association.</rdfs:comment>
+        <rdfs:label>Network layout</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#NetworkManagement -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#NetworkManagement">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/time/time#hasValidityInterval"/>
+                <owl:allValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Relationship between a network and its infrastructure manager over a particular period of time (if provided).</rdfs:comment>
+        <rdfs:label>Network management</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#NetworkTopology -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#NetworkTopology">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+        <rdfs:label xml:lang="en">Network topology</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#ObservedNetworkLayout -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#ObservedNetworkLayout">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/network/netw#NetworkLayout"/>
+        <rdfs:label>Observed network layout</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#PlannedNetworkLayout -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#PlannedNetworkLayout">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/network/netw#NetworkLayout"/>
+        <rdfs:label>Planned network layout</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#RailwayInfrastructureArtefact -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#RailwayInfrastructureArtefact">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact"/>
+        <rdfs:label xml:lang="en">Railway infrastructure artefact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#RailwayNetwork -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#RailwayNetwork">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/network/netw#ContainingEntity"/>
+        <rdfs:comment xml:lang="en">Class of all material (tracks, signals, stations...) and immaterial (speed restrictions, ...) assets constituting a network.</rdfs:comment>
+        <rdfs:label xml:lang="en">Railway network</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#SelectionCriterion -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#SelectionCriterion">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+        <rdfs:comment xml:lang="en">such as &apos;High speed...&apos;, &apos;TEN-T&apos;, &apos;Latvian National wide gauge&apos;. Characterization is left open to extensions as SKOS concept schemes or subclasses.</rdfs:comment>
+        <rdfs:label>Net entity selection criterion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#SubNetwork -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#SubNetwork">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/network/netw#RailwayInfrastructureArtefact"/>
+        <rdfs:label xml:lang="en">Sub network</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/network/netw#TopologyGraph -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/network/netw#TopologyGraph">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+        <rdfs:comment xml:lang="en">A Topology Graph individual denotes an information object carrying a serialized graph, typically retrievable from a file such as &lt;http://example.org/topology1.ttl&gt;. There can be several files, e.g. to provide several formats such as TTL, RDFXML, or JSON-LD.</rdfs:comment>
+        <rdfs:label xml:lang="en">Topology graph</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi -->
+
