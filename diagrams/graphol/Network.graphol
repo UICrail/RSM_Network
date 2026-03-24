@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graphol version="3">
-  <project name="Network" version="0.1">
+  <project name="Network" version="https://cdm.ovh/rsm/network/netw/0.1">
     <ontology addLabelFromUserInput="0" iri="https://cdm.ovh/rsm/network/netw" prefix="netw" addLabelFromSimpleName="0" lang="en">
       <imports>
         <import location="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" iri="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" isLocal="0" version=""/>
-        <import location="https://cdm.ovh/rsm/time/time.ttl" iri="https://cdm.ovh/rsm/time/time" isLocal="0" version="urn:absolute:1.0"/>
+        <import location="https://cdm.ovh/rsm/time/time.ttl" iri="https://cdm.ovh/rsm/time/time" isLocal="0" version="https://cdm.ovh/rsm/time/time"/>
       </imports>
       <prefixes>
         <prefix>
@@ -585,6 +585,9 @@
           <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParametrizedBy</value>
         </iri>
         <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf</value>
+        </iri>
+        <iri>
           <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn</value>
         </iri>
         <iri>
@@ -883,7 +886,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Containing entity</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -906,7 +909,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Infrastructure manager</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -934,7 +937,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Net entity</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1017,7 +1020,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Network topology</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1059,7 +1062,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Railway infrastructure artefact</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1073,7 +1076,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Railway network</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1119,7 +1122,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Sub network</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1133,7 +1136,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Topology graph</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1157,7 +1160,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>concerns network</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1219,7 +1222,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>defined by collection</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1248,7 +1251,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>has selection criterion</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1262,7 +1265,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>has sub network</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1286,7 +1289,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>has topology</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1314,7 +1317,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>is contained in</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1357,7 +1360,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>selected from network</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -1371,7 +1374,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>serialized as</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -2086,10 +2089,10 @@
           <iri>https://cdm.ovh/rsm/network/netw#SubNetwork</iri>
           <label y="-20" height="23" customSize="0" size="12" x="-20" width="110"/>
         </node>
-        <node type="concept" id="n32" color="#fcfcfc">
-          <geometry y="-20" height="50" x="-150" width="110"/>
-          <iri>https://cdm.ovh/rsm/network/netw#RailwayNetwork</iri>
-          <label y="-20" height="23" customSize="0" size="12" x="-150" width="110"/>
+        <node type="concept" id="n33" color="#fcfcfc">
+          <geometry y="-20" height="50" x="-160" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#ContainingEntity</iri>
+          <label y="-20" height="23" customSize="0" size="12" x="-160" width="110"/>
         </node>
         <node type="concept" id="n7" color="#fcfcfc">
           <geometry y="240" height="50" x="600" width="125"/>
@@ -2161,10 +2164,6 @@
           <point y="240" x="340"/>
           <point y="110" x="340"/>
         </edge>
-        <edge type="input" target="n30" id="e36" source="n32">
-          <point y="-20" x="-150"/>
-          <point y="60" x="-90"/>
-        </edge>
         <edge type="input" target="n30" id="e37" source="n31">
           <point y="-20" x="-20"/>
           <point y="60" x="-90"/>
@@ -2175,6 +2174,10 @@
         </edge>
         <edge type="inclusion" target="n30" id="e41" source="n13">
           <point y="60" x="50"/>
+          <point y="60" x="-90"/>
+        </edge>
+        <edge type="input" target="n30" id="e42" source="n33">
+          <point y="-20" x="-160"/>
           <point y="60" x="-90"/>
         </edge>
         <edge type="input" target="n20" id="e8" source="n9">
