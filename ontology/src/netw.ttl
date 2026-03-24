@@ -11,8 +11,7 @@
 
 <https://cdm.ovh/rsm/network/netw> rdf:type owl:Ontology ;
                                     owl:versionIRI <https://cdm.ovh/rsm/network/netw/0.1> ;
-                                    owl:imports <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ,
-                                                <https://cdm.ovh/rsm/time/time> .
+                                    owl:imports <https://cdm.ovh/rsm/time/time> .
 
 #################################################################
 #    Object Properties
