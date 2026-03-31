@@ -14,7 +14,7 @@ The container instances can be set up in such way to optimize the versioning, si
 
 ## Views
 
-The views do not entail any containment relationships. They can be used to define subnetworks:
+The views do not entail any containment relationships. Instead, they point to containers and their contents. Views can be used to define 'subnetworks':
 
 * by intension, e.g. "High Speed Network", "Narrow gauge network"... (using a set of pre-defined technical properties), or
 * by extension, e.g. "TEN-T Network" (using a pre-defined list of entries), or
