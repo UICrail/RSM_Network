@@ -1,0 +1,2071 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphol version="3">
+  <project name="RSM_parts_views" version="https://cdm.ovh/rsm/partsAndViews/pavo/0.1">
+    <ontology addLabelFromSimpleName="0" lang="en" addLabelFromUserInput="0" iri="https://cdm.ovh/rsm/partsAndViews/pavo">
+      <imports>
+        <import location="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" isLocal="0" iri="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" version=""/>
+        <import location="https://cdm.ovh/rsm/time/time" isLocal="0" iri="https://cdm.ovh/rsm/time/time" version="urn:absolute:1.0"/>
+      </imports>
+      <prefixes>
+        <prefix>
+          <value>dul</value>
+          <namespace>http://www.ontologydesignpatterns.org/ont/dul/DUL#</namespace>
+        </prefix>
+        <prefix>
+          <value>owl</value>
+          <namespace>http://www.w3.org/2002/07/owl#</namespace>
+        </prefix>
+        <prefix>
+          <value>pavo</value>
+          <namespace>https://cdm.ovh/rsm/partsAndViews/pavo#</namespace>
+        </prefix>
+        <prefix>
+          <value>rdf</value>
+          <namespace>http://www.w3.org/1999/02/22-rdf-syntax-ns#</namespace>
+        </prefix>
+        <prefix>
+          <value>rdfs</value>
+          <namespace>http://www.w3.org/2000/01/rdf-schema#</namespace>
+        </prefix>
+        <prefix>
+          <value>rsmt</value>
+          <namespace>https://cdm.ovh/rsm/time/time#</namespace>
+        </prefix>
+        <prefix>
+          <value>xml</value>
+          <namespace>http://www.w3.org/XML/1998/namespace</namespace>
+        </prefix>
+        <prefix>
+          <value>xsd</value>
+          <namespace>http://www.w3.org/2001/XMLSchema#</namespace>
+        </prefix>
+      </prefixes>
+      <datatypes>
+        <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+        <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral</datatype>
+        <datatype>http://www.w3.org/2000/01/rdf-schema#Literal</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#NCName</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#NMTOKEN</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#Name</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#anyURI</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#base64Binary</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#boolean</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#byte</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#dateTime</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#dateTimeStamp</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#decimal</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#double</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#float</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#hexBinary</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#int</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#integer</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#language</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#long</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#negativeInteger</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#nonPositiveInteger</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#normalizedString</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#positiveInteger</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#short</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#string</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#token</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#unsignedByte</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#unsignedInt</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#unsignedLong</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#unsignedShort</datatype>
+        <datatype>http://www.w3.org/2002/07/owl#rational</datatype>
+        <datatype>http://www.w3.org/2002/07/owl#real</datatype>
+      </datatypes>
+      <languages>
+        <language>de</language>
+        <language>en</language>
+        <language>es</language>
+        <language>fr</language>
+        <language>it</language>
+      </languages>
+      <facets>
+        <facet>http://www.w3.org/2001/XMLSchema#langRange</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#length</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#maxExclusive</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#maxInclusive</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#maxLength</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#minExclusive</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#minInclusive</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#minLength</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#pattern</facet>
+      </facets>
+      <annotationProperties>
+        <annotationProperty>http://www.w3.org/2000/01/rdf-schema#backwardCompatibleWith</annotationProperty>
+        <annotationProperty>http://www.w3.org/2000/01/rdf-schema#comment</annotationProperty>
+        <annotationProperty>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</annotationProperty>
+        <annotationProperty>http://www.w3.org/2000/01/rdf-schema#label</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#backwardCompatibleWith</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#deprecated</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#fetchedFrom</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#incompatibleWith</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#priorVersion</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#versionInfo</annotationProperty>
+      </annotationProperties>
+      <iris>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Abstract</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Amount</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ChemicalObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Classification</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collection</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collective</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Configuration</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Contract</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Design</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedSubstance</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Diagnosis</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FormalEntity</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FunctionalSubstance</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#LocalConcept</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Narrative</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Norm</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ObjectAggregate</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organism</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parthood</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Pattern</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Personification</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalBody</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PlanExecution</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Project</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Relation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Right</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Set</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObjectAttribute</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialRelation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpaceRegion</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpatioTemporalRegion</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeIndexedRelation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Transition</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TypeCollection</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#UnitOfMeasure</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#WorkflowExecution</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#actsFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#actsThrough</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#characterizes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#conceptualizes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#concretelyExpresses</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#coparticipatesWith</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#covers</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#defines</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesRole</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesTask</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#describes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#directlyFollows</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#directlyPrecedes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expands</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expresses</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expressesConcept</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#farFrom</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#follows</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasCommonBoundary</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasComponent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstraint</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasEventDate</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasInScope</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasIntervalDate</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParameter</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParameterDataValue</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPostcondition</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPrecondition</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasProperPart</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegionDataValue</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTask</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAction</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesEvent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesPart</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesTime</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesWhole</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#introduces</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#involvesAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAbout</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isActionIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAgentIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAgentInvolvedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isCharacterizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isComponentOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptExpressedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptUsedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptualizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConcretelyExpressedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConstituentOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConstraintFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isCoveredBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isDefinedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isDescribedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isEventIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExecutedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpandedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isIntroducedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isMemberOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isObjectIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isObservableAt</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParameterFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParametrizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPostconditionOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPreconditionOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPropertPartOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isQualityOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRealizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isReferenceOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isReferenceOfInformationRealizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRegionFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRelatedToConcept</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRelatedToDescription</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRoleDefinedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRoleOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSatisfiedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSpecializedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSubordinatedTo</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSuperordinatedTo</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskDefinedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTimeIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTimeIntervalOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTimeOfObservationOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isUnifiedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#nearTo</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#overlaps</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#parametrizes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizesInformationAbout</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizesSelfInformation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#sameSettingAs</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#specializes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#unifies</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#usesConcept</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#Literal</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#backwardCompatibleWith</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#comment</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#label</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#NCName</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#NMTOKEN</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#Name</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#anyURI</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#base64Binary</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#boolean</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#byte</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#dateTime</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#dateTimeStamp</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#decimal</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#double</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#float</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#hexBinary</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#int</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#integer</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#langRange</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#language</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#length</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#long</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#maxExclusive</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#maxInclusive</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#maxLength</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#minExclusive</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#minInclusive</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#minLength</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#negativeInteger</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#nonPositiveInteger</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#normalizedString</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#pattern</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#positiveInteger</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#short</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#string</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#token</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#unsignedByte</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#unsignedInt</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#unsignedLong</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#unsignedShort</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#Nothing</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#Thing</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#backwardCompatibleWith</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#bottomDataProperty</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#bottomObjectProperty</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#deprecated</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#fetchedFrom</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#incompatibleWith</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#priorVersion</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#rational</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#real</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#topDataProperty</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#topObjectProperty</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#versionInfo</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/parts_views/pavi</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Parts and views</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/parts_views/pavi</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Adapter ontology aligning part-whole and view modeling patterns with DUL. It keeps one OWL-native authoritative containment pattern and adds a contextual containment-tree pattern for open-ended tree vocabularies.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#AssetEntity</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#AssetEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Asset entity</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#AssetEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>any domain entity that can belong to the system being structured, whether atomic or composite at the chosen granularityany domain entity that can belong to the system being structured, whether atomic or composite at the chosen granularity</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#ContainerEntity</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#ContainerEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Container entity</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#ContainerEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>an asset entity that may contain other asset entities.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentSituation</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentSituation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Containment situation</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentSituation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Reified direct containment assertion scoped by a containment-tree individual. This pattern preserves tree identity and tree typing, but OWL 2 DL does not provide scoped transitive closure for a specific tree individual; use rules, SPARQL property paths, or materialization when per-tree closure is needed.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentTree</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentTree</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Containment tree</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentTreeType</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentTreeType</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Containment tree type</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#View</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#View</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>View</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#View</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>a descriptive perspective on one or more asset entities.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#ViewSituation</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#ViewSituation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>View situation</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#ViewSituation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>a situation in which a given view is applied to a given asset or container, optionally during a validity interval.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#ViewStatement</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#ViewStatement</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>an information object that expresses, records, serializes, or publishes a view.</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#ViewStatement</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>View statement</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#contains</value>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#contains</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>contains</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#contains</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>immediate containment property. A shortcut for the reified containment property that may be valid over some time interval. To be generated and isolated in an annotated graph, for ease of queying.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#containsTransitive</value>
+          <transitive/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#containsTransitive</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>contains transitive</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#containsTransitive</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>transitive closure of containment</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#denotes</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#denotes</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>denotes</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#denotes</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>links a view to the domain entity or entities it is about.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#hasPartInAssertion</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#hasPartInAssertion</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has part in assertion</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#hasSubview</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#hasSubview</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has subview</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#hasSubview</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>structural relation between views. As per our modeling choice, need not be functional or tree-enforcing globally.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#hasViewDescription</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#hasViewDescription</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has view description</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#hasWholeInAssertion</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#hasWholeInAssertion</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has whole in assertion</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#isContainedIn</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#isContainedIn</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>is contained in</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#isContainedInTransitive</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#isContainedInTransitive</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>is contained in transitive</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#isPartOfContainmentAssertion</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#isPartOfContainmentAssertion</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>is part of containment assertion</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#isWholeOfContainmentAssertion</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#isWholeOfContainmentAssertion</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>is whole of containment assertion</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#ofContainmentType</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#ofContainmentType</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>of containment type</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#ofContainmentType</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Allows to 'lexically type' containment relationships, using some SKOS concept scheme. Alternatively, subproperties can be envisaged and could ultimately become part of the present ontology.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/partsAndViews/pavo#showsEntity</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#showsEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>shows entity</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/partsAndViews/pavo#showsEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>an entity seen under a view</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/parts_views/pavi</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/parts_views/pavi</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Parts and views</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/parts_views/pavi</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Adapter ontology aligning part-whole and view modeling patterns with DUL. It keeps one OWL-native authoritative containment pattern and adds a contextual containment-tree pattern for open-ended tree vocabularies.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/time/time#hasValidityInterval</value>
+        </iri>
+        <iri>
+          <value>urn:x-graphol:origin</value>
+        </iri>
+      </iris>
+    </ontology>
+    <diagrams>
+      <diagram height="5000" width="5000" name="containment">
+        <node id="n32" color="#c2b078" type="concept">
+          <geometry x="300" height="50" width="110" y="-220"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description</iri>
+          <label size="12" customSize="0" x="300" height="23" width="110" y="-220"/>
+        </node>
+        <node id="n33" color="#fcfcfc" type="complement">
+          <geometry x="420" height="30" width="50" y="-220"/>
+          <label size="12" customSize="0" x="420" height="23" width="25" y="-220"/>
+        </node>
+        <node id="n34" color="#fcfcfc" type="complement">
+          <geometry x="420" height="30" width="50" y="-280"/>
+          <label size="12" customSize="0" x="420" height="23" width="25" y="-280"/>
+        </node>
+        <node id="n35" color="#c2b078" type="concept">
+          <geometry x="300" height="50" width="110" y="-280"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject</iri>
+          <label size="12" customSize="0" x="300" height="23" width="110" y="-280"/>
+        </node>
+        <node id="n36" color="#fcfcfc" type="concept">
+          <geometry x="550" height="50" width="110" y="-140"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#ContainerEntity</iri>
+          <label size="12" customSize="0" x="550" height="23" width="110" y="-140"/>
+        </node>
+        <node id="n37" color="#fcfcfc" type="concept">
+          <geometry x="550" height="50" width="110" y="-250"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#AssetEntity</iri>
+          <label size="12" customSize="0" x="550" height="23" width="110" y="-250"/>
+        </node>
+        <node id="n38" color="#c2b078" type="concept">
+          <geometry x="550" height="50" width="110" y="-350"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object</iri>
+          <label size="12" customSize="0" x="550" height="23" width="110" y="-350"/>
+        </node>
+        <node id="n39" color="#fcfcfc" type="role">
+          <geometry x="760" height="50" width="70" y="-200"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#contains</iri>
+          <label size="12" customSize="0" x="760" height="23" width="53" y="-230"/>
+        </node>
+        <node id="n42" color="#fcfcfc" type="role">
+          <geometry x="760" height="50" width="70" y="-290"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#containsTransitive</iri>
+          <label size="12" customSize="0" x="760" height="23" width="105" y="-320"/>
+        </node>
+        <node id="n47" color="#fcfcfc" type="domain-restriction">
+          <geometry x="660" height="20" width="20" y="-140"/>
+          <label size="12" customSize="0" x="660" height="23" width="39" y="-162">exists</label>
+        </node>
+        <node id="n48" color="#000000" type="range-restriction">
+          <geometry x="660" height="20" width="20" y="-250"/>
+          <label size="12" customSize="0" x="660" height="23" width="39" y="-272">exists</label>
+        </node>
+        <node id="n50" color="#c2b078" type="role">
+          <geometry x="760" height="50" width="70" y="-380"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasProperPart</iri>
+          <label size="12" customSize="0" x="760" height="23" width="85" y="-410"/>
+        </node>
+        <edge id="e35" type="input" target="n33" source="n32">
+          <point x="300" y="-220"/>
+          <point x="420" y="-220"/>
+        </edge>
+        <edge id="e37" type="input" target="n34" source="n35">
+          <point x="300" y="-280"/>
+          <point x="420" y="-280"/>
+        </edge>
+        <edge id="e38" type="inclusion" target="n37" source="n36">
+          <point x="550" y="-140"/>
+          <point x="550" y="-250"/>
+        </edge>
+        <edge id="e39" type="inclusion" target="n38" source="n37">
+          <point x="550" y="-250"/>
+          <point x="550" y="-350"/>
+        </edge>
+        <edge id="e40" type="inclusion" target="n34" source="n37">
+          <point x="550" y="-250"/>
+          <point x="420" y="-280"/>
+        </edge>
+        <edge id="e41" type="inclusion" target="n33" source="n37">
+          <point x="550" y="-250"/>
+          <point x="420" y="-220"/>
+        </edge>
+        <edge id="e43" type="inclusion" target="n42" source="n39">
+          <point x="760" y="-200"/>
+          <point x="760" y="-290"/>
+        </edge>
+        <edge id="e48" type="inclusion" target="n36" source="n47">
+          <point x="660" y="-140"/>
+          <point x="550" y="-140"/>
+        </edge>
+        <edge id="e49" type="inclusion" target="n37" source="n48">
+          <point x="660" y="-250"/>
+          <point x="550" y="-250"/>
+        </edge>
+        <edge id="e50" type="input" target="n47" source="n39">
+          <point x="760" y="-200"/>
+          <point x="660" y="-140"/>
+        </edge>
+        <edge id="e51" type="input" target="n48" source="n39">
+          <point x="760" y="-200"/>
+          <point x="660" y="-250"/>
+        </edge>
+        <edge id="e53" type="inclusion" target="n50" source="n42">
+          <point x="760" y="-290"/>
+          <point x="760" y="-380"/>
+        </edge>
+      </diagram>
+      <diagram height="5000" width="5000" name="containment_situation">
+        <node id="n0" color="#646b63" type="concept">
+          <geometry x="280" height="50" width="110" y="320"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept</iri>
+          <label size="12" customSize="0" x="280" height="23" width="110" y="320"/>
+        </node>
+        <node id="n1" color="#fcfcfc" type="domain-restriction">
+          <geometry x="10" height="20" width="20" y="80"/>
+          <label size="12" customSize="0" x="10" height="23" width="39" y="58">forall</label>
+        </node>
+        <node id="n10" color="#fcfcfc" type="domain-restriction">
+          <geometry x="10" height="20" width="20" y="320"/>
+          <label size="12" customSize="0" x="10" height="23" width="39" y="298">exists</label>
+        </node>
+        <node id="n11" color="#fcfcfc" type="concept">
+          <geometry x="-110" height="585" width="155" y="339"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentSituation</iri>
+          <label size="12" customSize="0" x="-115" height="23" width="155" y="67"/>
+        </node>
+        <node id="n12" color="#fcfcfc" type="concept">
+          <geometry x="160" height="50" width="110" y="110"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#AssetEntity</iri>
+          <label size="12" customSize="0" x="160" height="23" width="110" y="110"/>
+        </node>
+        <node id="n13" color="#c2b078" type="concept">
+          <geometry x="190" height="50" width="110" y="440"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval</iri>
+          <label size="12" customSize="0" x="190" height="23" width="110" y="440"/>
+        </node>
+        <node id="n14" color="#fcfcfc" type="domain-restriction">
+          <geometry x="30" height="20" width="20" y="440"/>
+          <label size="12" customSize="0" x="30" height="23" width="39" y="418">forall</label>
+        </node>
+        <node id="n15" color="#16ccef" type="role">
+          <geometry x="90" height="50" width="70" y="400"/>
+          <iri>https://cdm.ovh/rsm/time/time#hasValidityInterval</iri>
+          <label size="12" customSize="0" x="90" height="23" width="105" y="370"/>
+        </node>
+        <node id="n16" color="#fcfcfc" type="role">
+          <geometry x="90" height="50" width="70" y="320"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#ofContainmentType</iri>
+          <label size="12" customSize="0" x="90" height="23" width="113" y="290"/>
+        </node>
+        <node id="n17" color="#000000" type="range-restriction">
+          <geometry x="160" height="20" width="20" y="320"/>
+          <label size="12" customSize="0" x="160" height="23" width="39" y="298">exists</label>
+        </node>
+        <node id="n19" color="#fcfcfc" type="concept">
+          <geometry x="430" height="50" width="110" y="550"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentTree</iri>
+          <label size="12" customSize="0" x="430" height="23" width="110" y="550"/>
+        </node>
+        <node id="n2" color="#fcfcfc" type="domain-restriction">
+          <geometry x="9" height="20" width="20" y="172"/>
+          <label size="12" customSize="0" x="9" height="23" width="39" y="150">forall</label>
+        </node>
+        <node id="n23" color="#c2b078" type="concept">
+          <geometry x="430" height="50" width="110" y="470"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Configuration</iri>
+          <label size="12" customSize="0" x="430" height="23" width="110" y="470"/>
+        </node>
+        <node id="n24" color="#c2b078" type="role">
+          <geometry x="40" height="50" width="70" y="510"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember</iri>
+          <label size="12" customSize="0" x="40" height="23" width="71" y="480"/>
+        </node>
+        <node id="n25" color="#fcfcfc" type="concept">
+          <geometry x="120" height="50" width="135" y="690"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentTreeType</iri>
+          <label size="12" customSize="0" x="120" height="23" width="135" y="690"/>
+        </node>
+        <node id="n26" color="#c2b078" type="concept">
+          <geometry x="120" height="50" width="135" y="620"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description</iri>
+          <label size="12" customSize="0" x="120" height="23" width="135" y="620"/>
+        </node>
+        <node id="n27" color="#c2b078" type="role">
+          <geometry x="270" height="50" width="70" y="620"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isUnifiedBy</iri>
+          <label size="12" customSize="0" x="270" height="23" width="67" y="590"/>
+        </node>
+        <node id="n31" color="#fcfcfc" type="domain-restriction">
+          <geometry x="100" height="20" width="20" y="550"/>
+          <label size="12" customSize="0" x="100" height="23" width="39" y="528">exists</label>
+        </node>
+        <node id="n33" color="#fcfcfc" type="domain-restriction">
+          <geometry x="360" height="20" width="20" y="690"/>
+          <label size="12" customSize="0" x="360" height="23" width="39" y="668">forall</label>
+        </node>
+        <node id="n34" color="#c2b078" type="concept">
+          <geometry x="-110" height="50" width="110" y="-20"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation</iri>
+          <label size="12" customSize="0" x="-110" height="23" width="110" y="-20"/>
+        </node>
+        <node id="n7" color="#fcfcfc" type="role">
+          <geometry x="89" height="50" width="70" y="212"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#hasWholeInAssertion</iri>
+          <label size="12" customSize="0" x="89" height="23" width="121" y="182"/>
+        </node>
+        <node id="n9" color="#fcfcfc" type="role">
+          <geometry x="90" height="50" width="70" y="20"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#hasPartInAssertion</iri>
+          <label size="12" customSize="0" x="90" height="23" width="110" y="-10"/>
+        </node>
+        <edge id="e1" type="input" target="n1" source="n12">
+          <point x="160" y="110"/>
+          <point x="10" y="80"/>
+        </edge>
+        <edge id="e13" type="inclusion" target="n14" source="n11">
+          <point x="-33" y="436"/>
+          <point x="30" y="440"/>
+        </edge>
+        <edge id="e14" type="input" target="n14" source="n13">
+          <point x="190" y="440"/>
+          <point x="30" y="440"/>
+        </edge>
+        <edge id="e15" type="input" target="n14" source="n15">
+          <point x="90" y="400"/>
+          <point x="30" y="440"/>
+        </edge>
+        <edge id="e16" type="inclusion" target="n11" source="n10">
+          <point x="10" y="320"/>
+          <point x="-34" y="320"/>
+        </edge>
+        <edge id="e17" type="inclusion" target="n0" source="n17">
+          <point x="160" y="320"/>
+          <point x="280" y="320"/>
+        </edge>
+        <edge id="e18" type="input" target="n10" source="n16">
+          <point x="90" y="320"/>
+          <point x="10" y="320"/>
+        </edge>
+        <edge id="e19" type="input" target="n17" source="n16">
+          <point x="90" y="320"/>
+          <point x="160" y="320"/>
+        </edge>
+        <edge id="e2" type="inclusion" target="n1" source="n11">
+          <point x="-34" y="80"/>
+          <point x="10" y="80"/>
+        </edge>
+        <edge id="e3" type="input" target="n1" source="n9">
+          <point x="90" y="20"/>
+          <point x="10" y="80"/>
+        </edge>
+        <edge id="e31" type="inclusion" target="n26" source="n25">
+          <point x="120" y="690"/>
+          <point x="120" y="620"/>
+        </edge>
+        <edge id="e4" type="input" target="n2" source="n7">
+          <point x="89" y="212"/>
+          <point x="9" y="172"/>
+        </edge>
+        <edge id="e40" type="inclusion" target="n23" source="n19">
+          <point x="430" y="550"/>
+          <point x="430" y="470"/>
+        </edge>
+        <edge id="e41" type="inclusion" target="n31" source="n19">
+          <point x="430" y="550"/>
+          <point x="100" y="550"/>
+        </edge>
+        <edge id="e42" type="input" target="n31" source="n11">
+          <point x="-33" y="551"/>
+          <point x="100" y="550"/>
+        </edge>
+        <edge id="e43" type="input" target="n31" source="n24">
+          <point x="40" y="510"/>
+          <point x="100" y="550"/>
+        </edge>
+        <edge id="e44" type="inclusion" target="n33" source="n19">
+          <point x="430" y="550"/>
+          <point x="360" y="690"/>
+        </edge>
+        <edge id="e45" type="input" target="n33" source="n27">
+          <point x="270" y="620"/>
+          <point x="360" y="690"/>
+        </edge>
+        <edge id="e46" type="input" target="n33" source="n25">
+          <point x="120" y="690"/>
+          <point x="360" y="690"/>
+        </edge>
+        <edge id="e47" type="inclusion" target="n34" source="n11">
+          <point x="-110" y="339"/>
+          <point x="-110" y="-20"/>
+        </edge>
+        <edge id="e5" type="input" target="n2" source="n12">
+          <point x="160" y="110"/>
+          <point x="9" y="172"/>
+        </edge>
+        <edge id="e6" type="inclusion" target="n2" source="n11">
+          <point x="-33" y="170"/>
+          <point x="9" y="172"/>
+        </edge>
+      </diagram>
+      <diagram height="5000" width="5000" name="inverse properties">
+        <node id="n0" color="#fcfcfc" type="role">
+          <geometry x="170" height="50" width="70" y="90"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#hasPartInAssertion</iri>
+          <label size="12" customSize="0" x="170" height="23" width="110" y="60"/>
+        </node>
+        <node id="n1" color="#fcfcfc" type="role">
+          <geometry x="-90" height="50" width="70" y="90"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#isPartOfContainmentAssertion</iri>
+          <label size="12" customSize="0" x="-90" height="23" width="171" y="60"/>
+        </node>
+        <node id="n10" color="#fcfcfc" type="role">
+          <geometry x="-90" height="50" width="70" y="-140"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#isContainedIn</iri>
+          <label size="12" customSize="0" x="-90" height="23" width="81" y="-170"/>
+        </node>
+        <node id="n11" color="#fcfcfc" type="role">
+          <geometry x="-90" height="50" width="70" y="-60"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#isContainedInTransitive</iri>
+          <label size="12" customSize="0" x="-90" height="23" width="132" y="-90"/>
+        </node>
+        <node id="n12" color="#fcfcfc" type="role-inverse">
+          <geometry x="40" height="30" width="50" y="-140"/>
+          <label size="12" customSize="0" x="40" height="23" width="23" y="-140"/>
+        </node>
+        <node id="n13" color="#fcfcfc" type="role-inverse">
+          <geometry x="40" height="30" width="50" y="-60"/>
+          <label size="12" customSize="0" x="40" height="23" width="23" y="-60"/>
+        </node>
+        <node id="n14" color="#fcfcfc" type="role-inverse">
+          <geometry x="40" height="30" width="50" y="90"/>
+          <label size="12" customSize="0" x="40" height="23" width="23" y="90"/>
+        </node>
+        <node id="n15" color="#fcfcfc" type="role-inverse">
+          <geometry x="40" height="30" width="50" y="180"/>
+          <label size="12" customSize="0" x="40" height="23" width="23" y="180"/>
+        </node>
+        <node id="n3" color="#fcfcfc" type="role">
+          <geometry x="-90" height="50" width="70" y="180"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#isWholeOfContainmentAssertion</iri>
+          <label size="12" customSize="0" x="-90" height="23" width="182" y="150"/>
+        </node>
+        <node id="n5" color="#fcfcfc" type="role">
+          <geometry x="170" height="50" width="70" y="180"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#hasWholeInAssertion</iri>
+          <label size="12" customSize="0" x="170" height="23" width="121" y="150"/>
+        </node>
+        <node id="n6" color="#fcfcfc" type="role">
+          <geometry x="170" height="50" width="70" y="-140"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#contains</iri>
+          <label size="12" customSize="0" x="170" height="23" width="53" y="-170"/>
+        </node>
+        <node id="n7" color="#fcfcfc" type="role">
+          <geometry x="170" height="50" width="70" y="-60"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#containsTransitive</iri>
+          <label size="12" customSize="0" x="170" height="23" width="105" y="-90"/>
+        </node>
+        <edge id="e12" type="input" target="n12" source="n6">
+          <point x="170" y="-140"/>
+          <point x="40" y="-140"/>
+        </edge>
+        <edge id="e13" type="input" target="n13" source="n7">
+          <point x="170" y="-60"/>
+          <point x="40" y="-60"/>
+        </edge>
+        <edge id="e14" type="input" target="n14" source="n0">
+          <point x="170" y="90"/>
+          <point x="40" y="90"/>
+        </edge>
+        <edge id="e15" type="input" target="n15" source="n5">
+          <point x="170" y="180"/>
+          <point x="40" y="180"/>
+        </edge>
+        <edge id="e20" type="equivalence" target="n12" source="n10">
+          <point x="-90" y="-140"/>
+          <point x="40" y="-140"/>
+        </edge>
+        <edge id="e21" type="equivalence" target="n13" source="n11">
+          <point x="-90" y="-60"/>
+          <point x="40" y="-60"/>
+        </edge>
+        <edge id="e22" type="equivalence" target="n14" source="n1">
+          <point x="-90" y="90"/>
+          <point x="40" y="90"/>
+        </edge>
+        <edge id="e24" type="equivalence" target="n15" source="n3">
+          <point x="-90" y="180"/>
+          <point x="40" y="180"/>
+        </edge>
+      </diagram>
+      <diagram height="5000" width="5000" name="property details">
+        <node id="n0" color="#fcfcfc" type="role">
+          <geometry x="50" height="50" width="70" y="-50"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#hasPartInAssertion</iri>
+          <label size="12" customSize="0" x="50" height="23" width="110" y="-80"/>
+        </node>
+        <node id="n1" color="#fcfcfc" type="concept">
+          <geometry x="-167" height="50" width="145" y="-50"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentSituation</iri>
+          <label size="12" customSize="0" x="-167" height="23" width="145" y="-50"/>
+        </node>
+        <node id="n10" color="#000000" type="range-restriction">
+          <geometry x="130" height="20" width="20" y="30"/>
+          <label size="12" customSize="0" x="130" height="23" width="39" y="8">exists</label>
+        </node>
+        <node id="n12" color="#fcfcfc" type="concept">
+          <geometry x="-167" height="50" width="145" y="30"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentSituation</iri>
+          <label size="12" customSize="0" x="-167" height="23" width="145" y="30"/>
+        </node>
+        <node id="n14" color="#fcfcfc" type="domain-restriction">
+          <geometry x="-30" height="20" width="20" y="30"/>
+          <label size="12" customSize="0" x="-30" height="23" width="39" y="8">exists</label>
+        </node>
+        <node id="n15" color="#fcfcfc" type="role">
+          <geometry x="50" height="50" width="70" y="30"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#hasWholeInAssertion</iri>
+          <label size="12" customSize="0" x="50" height="23" width="121" y="0"/>
+        </node>
+        <node id="n21" color="#c2b078" type="concept">
+          <geometry x="240" height="50" width="110" y="-50"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object</iri>
+          <label size="12" customSize="0" x="240" height="23" width="110" y="-50"/>
+        </node>
+        <node id="n22" color="#c2b078" type="concept">
+          <geometry x="240" height="50" width="110" y="30"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object</iri>
+          <label size="12" customSize="0" x="240" height="23" width="110" y="30"/>
+        </node>
+        <node id="n24" color="#fcfcfc" type="concept">
+          <geometry x="-160" height="50" width="110" y="120"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#ViewSituation</iri>
+          <label size="12" customSize="0" x="-160" height="23" width="110" y="120"/>
+        </node>
+        <node id="n3" color="#fcfcfc" type="domain-restriction">
+          <geometry x="-30" height="20" width="20" y="-50"/>
+          <label size="12" customSize="0" x="-30" height="23" width="39" y="-72">exists</label>
+        </node>
+        <node id="n4" color="#000000" type="range-restriction">
+          <geometry x="130" height="20" width="20" y="-50"/>
+          <label size="12" customSize="0" x="130" height="23" width="39" y="-72">exists</label>
+        </node>
+        <node id="n5" color="#fcfcfc" type="role">
+          <geometry x="50" height="50" width="70" y="120"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#hasViewDescription</iri>
+          <label size="12" customSize="0" x="50" height="23" width="113" y="90"/>
+        </node>
+        <node id="n6" color="#000000" type="range-restriction">
+          <geometry x="130" height="20" width="20" y="120"/>
+          <label size="12" customSize="0" x="130" height="23" width="39" y="98">exists</label>
+        </node>
+        <node id="n7" color="#fcfcfc" type="domain-restriction">
+          <geometry x="-30" height="20" width="20" y="120"/>
+          <label size="12" customSize="0" x="-30" height="23" width="39" y="98">exists</label>
+        </node>
+        <node id="n9" color="#fcfcfc" type="concept">
+          <geometry x="240" height="50" width="110" y="120"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#View</iri>
+          <label size="12" customSize="0" x="240" height="23" width="110" y="120"/>
+        </node>
+        <edge id="e1" type="inclusion" target="n1" source="n3">
+          <point x="-30" y="-50"/>
+          <point x="-167" y="-50"/>
+        </edge>
+        <edge id="e10" type="inclusion" target="n12" source="n14">
+          <point x="-30" y="30"/>
+          <point x="-167" y="30"/>
+        </edge>
+        <edge id="e12" type="input" target="n14" source="n15">
+          <point x="50" y="30"/>
+          <point x="-30" y="30"/>
+        </edge>
+        <edge id="e13" type="input" target="n10" source="n15">
+          <point x="50" y="30"/>
+          <point x="130" y="30"/>
+        </edge>
+        <edge id="e18" type="inclusion" target="n21" source="n4">
+          <point x="130" y="-50"/>
+          <point x="240" y="-50"/>
+        </edge>
+        <edge id="e19" type="inclusion" target="n22" source="n10">
+          <point x="130" y="30"/>
+          <point x="240" y="30"/>
+        </edge>
+        <edge id="e2" type="input" target="n4" source="n0">
+          <point x="50" y="-50"/>
+          <point x="130" y="-50"/>
+        </edge>
+        <edge id="e21" type="inclusion" target="n24" source="n7">
+          <point x="-30" y="120"/>
+          <point x="-160" y="120"/>
+        </edge>
+        <edge id="e3" type="input" target="n3" source="n0">
+          <point x="50" y="-50"/>
+          <point x="-30" y="-50"/>
+        </edge>
+        <edge id="e4" type="inclusion" target="n9" source="n6">
+          <point x="130" y="120"/>
+          <point x="240" y="120"/>
+        </edge>
+        <edge id="e6" type="input" target="n7" source="n5">
+          <point x="50" y="120"/>
+          <point x="-30" y="120"/>
+        </edge>
+        <edge id="e7" type="input" target="n6" source="n5">
+          <point x="50" y="120"/>
+          <point x="130" y="120"/>
+        </edge>
+      </diagram>
+      <diagram height="5000" width="5000" name="view">
+        <node id="n12" color="#c2b078" type="concept">
+          <geometry x="-130" height="55" width="110" y="60"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description</iri>
+          <label size="12" customSize="0" x="-130" height="23" width="110" y="60"/>
+        </node>
+        <node id="n14" color="#fcfcfc" type="concept">
+          <geometry x="-130" height="165" width="110" y="227"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#View</iri>
+          <label size="12" customSize="0" x="-130" height="23" width="110" y="227"/>
+        </node>
+        <node id="n16" color="#fcfcfc" type="role">
+          <geometry x="-130" height="50" width="70" y="370"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#hasSubview</iri>
+          <label size="12" customSize="0" x="-130" height="23" width="71" y="340"/>
+        </node>
+        <node id="n17" color="#fcfcfc" type="domain-restriction">
+          <geometry x="-210" height="20" width="20" y="370"/>
+          <label size="12" customSize="0" x="-210" height="23" width="39" y="348">exists</label>
+        </node>
+        <node id="n18" color="#000000" type="range-restriction">
+          <geometry x="-50" height="20" width="20" y="370"/>
+          <label size="12" customSize="0" x="-50" height="23" width="39" y="348">exists</label>
+        </node>
+        <node id="n19" color="#fcfcfc" type="domain-restriction">
+          <geometry x="-40" height="20" width="20" y="260"/>
+          <label size="12" customSize="0" x="-40" height="23" width="39" y="238">exists</label>
+        </node>
+        <node id="n20" color="#000000" type="range-restriction">
+          <geometry x="110" height="20" width="20" y="260"/>
+          <label size="12" customSize="0" x="110" height="23" width="39" y="238">exists</label>
+        </node>
+        <node id="n21" color="#fcfcfc" type="concept">
+          <geometry x="200" height="50" width="110" y="260"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#AssetEntity</iri>
+          <label size="12" customSize="0" x="200" height="23" width="110" y="260"/>
+        </node>
+        <node id="n22" color="#fcfcfc" type="role">
+          <geometry x="40" height="50" width="70" y="260"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#denotes</iri>
+          <label size="12" customSize="0" x="40" height="23" width="51" y="230"/>
+        </node>
+        <node id="n23" color="#c2b078" type="role">
+          <geometry x="40" height="50" width="70" y="100"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy</iri>
+          <label size="12" customSize="0" x="40" height="23" width="85" y="70"/>
+        </node>
+        <node id="n5" color="#fcfcfc" type="concept">
+          <geometry x="200" height="50" width="110" y="170"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#ViewStatement</iri>
+          <label size="12" customSize="0" x="200" height="23" width="110" y="170"/>
+        </node>
+        <node id="n8" color="#fcfcfc" type="domain-restriction">
+          <geometry x="-40" height="20" width="20" y="170"/>
+          <label size="12" customSize="0" x="-40" height="23" width="39" y="148">forall</label>
+        </node>
+        <node id="n9" color="#c2b078" type="concept">
+          <geometry x="200" height="50" width="110" y="100"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject</iri>
+          <label size="12" customSize="0" x="200" height="23" width="110" y="100"/>
+        </node>
+        <edge id="e14" type="inclusion" target="n12" source="n14">
+          <point x="-130" y="227"/>
+          <point x="-130" y="60"/>
+        </edge>
+        <edge id="e16" type="input" target="n17" source="n16">
+          <point x="-130" y="370"/>
+          <point x="-210" y="370"/>
+        </edge>
+        <edge id="e17" type="input" target="n18" source="n16">
+          <point x="-130" y="370"/>
+          <point x="-50" y="370"/>
+        </edge>
+        <edge id="e18" type="inclusion" target="n14" source="n17">
+          <point x="-210" y="370"/>
+          <point x="-130" y="227"/>
+        </edge>
+        <edge id="e19" type="inclusion" target="n14" source="n18">
+          <point x="-50" y="370"/>
+          <point x="-130" y="227"/>
+        </edge>
+        <edge id="e20" type="inclusion" target="n14" source="n19">
+          <point x="-40" y="260"/>
+          <point x="-76" y="260"/>
+        </edge>
+        <edge id="e22" type="input" target="n20" source="n22">
+          <point x="40" y="260"/>
+          <point x="110" y="260"/>
+        </edge>
+        <edge id="e23" type="input" target="n19" source="n22">
+          <point x="40" y="260"/>
+          <point x="-40" y="260"/>
+        </edge>
+        <edge id="e24" type="inclusion" target="n21" source="n20">
+          <point x="110" y="260"/>
+          <point x="200" y="260"/>
+        </edge>
+        <edge id="e26" type="input" target="n8" source="n23">
+          <point x="40" y="100"/>
+          <point x="-40" y="170"/>
+        </edge>
+        <edge id="e27" type="input" target="n8" source="n5">
+          <point x="200" y="170"/>
+          <point x="-40" y="170"/>
+        </edge>
+        <edge id="e28" type="inclusion" target="n8" source="n14">
+          <point x="-130" y="227"/>
+          <point x="-40" y="170"/>
+        </edge>
+        <edge id="e8" type="inclusion" target="n9" source="n5">
+          <point x="200" y="170"/>
+          <point x="200" y="100"/>
+        </edge>
+      </diagram>
+      <diagram height="5000" width="5000" name="view_situation">
+        <node id="n0" color="#fcfcfc" type="domain-restriction">
+          <geometry x="0" height="20" width="20" y="310"/>
+          <label size="12" customSize="0" x="0" height="23" width="39" y="288">exists</label>
+        </node>
+        <node id="n1" color="#fcfcfc" type="role">
+          <geometry x="110" height="50" width="70" y="0"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#hasViewDescription</iri>
+          <label size="12" customSize="0" x="110" height="23" width="113" y="-30"/>
+        </node>
+        <node id="n12" color="#fcfcfc" type="concept">
+          <geometry x="240" height="50" width="110" y="50"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#View</iri>
+          <label size="12" customSize="0" x="240" height="23" width="110" y="50"/>
+        </node>
+        <node id="n13" color="#fcfcfc" type="concept">
+          <geometry x="-107" height="530" width="110" y="220"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#ViewSituation</iri>
+          <label size="12" customSize="0" x="-107" height="23" width="110" y="220"/>
+        </node>
+        <node id="n14" color="#c2b078" type="role">
+          <geometry x="120" height="50" width="70" y="140"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor</iri>
+          <label size="12" customSize="0" x="120" height="23" width="71" y="110"/>
+        </node>
+        <node id="n15" color="#fcfcfc" type="role">
+          <geometry x="120" height="50" width="70" y="240"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#showsEntity</iri>
+          <label size="12" customSize="0" x="120" height="23" width="72" y="210"/>
+        </node>
+        <node id="n18" color="#fcfcfc" type="concept">
+          <geometry x="240" height="50" width="110" y="310"/>
+          <iri>https://cdm.ovh/rsm/partsAndViews/pavo#AssetEntity</iri>
+          <label size="12" customSize="0" x="240" height="23" width="110" y="310"/>
+        </node>
+        <node id="n2" color="#c2b078" type="role">
+          <geometry x="110" height="50" width="70" y="-100"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies</iri>
+          <label size="12" customSize="0" x="110" height="23" width="52" y="-130"/>
+        </node>
+        <node id="n21" color="#16ccef" type="role">
+          <geometry x="100" height="50" width="70" y="390"/>
+          <iri>https://cdm.ovh/rsm/time/time#hasValidityInterval</iri>
+          <label size="12" customSize="0" x="100" height="23" width="105" y="360"/>
+        </node>
+        <node id="n22" color="#fcfcfc" type="domain-restriction">
+          <geometry x="0" height="20" width="20" y="440"/>
+          <label size="12" customSize="0" x="0" height="23" width="39" y="418">exists</label>
+        </node>
+        <node id="n23" color="#c2b078" type="concept">
+          <geometry x="240" height="50" width="110" y="440"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval</iri>
+          <label size="12" customSize="0" x="240" height="23" width="110" y="440"/>
+        </node>
+        <node id="n6" color="#fcfcfc" type="domain-restriction">
+          <geometry x="3" height="20" width="20" y="50"/>
+          <label size="12" customSize="0" x="3" height="23" width="39" y="28">exists</label>
+        </node>
+        <node id="n7" color="#c2b078" type="concept">
+          <geometry x="-107" height="50" width="110" y="-100"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation</iri>
+          <label size="12" customSize="0" x="-107" height="23" width="110" y="-100"/>
+        </node>
+        <edge id="e0" type="inclusion" target="n0" source="n13">
+          <point x="-52" y="306"/>
+          <point x="0" y="310"/>
+        </edge>
+        <edge id="e14" type="inclusion" target="n14" source="n15">
+          <point x="120" y="240"/>
+          <point x="120" y="140"/>
+        </edge>
+        <edge id="e17" type="inclusion" target="n2" source="n1">
+          <point x="110" y="0"/>
+          <point x="110" y="-100"/>
+        </edge>
+        <edge id="e18" type="input" target="n0" source="n18">
+          <point x="240" y="310"/>
+          <point x="0" y="310"/>
+        </edge>
+        <edge id="e2" type="input" target="n0" source="n15">
+          <point x="120" y="240"/>
+          <point x="0" y="310"/>
+        </edge>
+        <edge id="e22" type="inclusion" target="n22" source="n13">
+          <point x="-52" y="441"/>
+          <point x="0" y="440"/>
+        </edge>
+        <edge id="e23" type="input" target="n22" source="n21">
+          <point x="100" y="390"/>
+          <point x="0" y="440"/>
+        </edge>
+        <edge id="e24" type="input" target="n22" source="n23">
+          <point x="240" y="440"/>
+          <point x="0" y="440"/>
+        </edge>
+        <edge id="e3" type="input" target="n6" source="n1">
+          <point x="110" y="0"/>
+          <point x="3" y="50"/>
+        </edge>
+        <edge id="e7" type="inclusion" target="n6" source="n13">
+          <point x="-53" y="50"/>
+          <point x="3" y="50"/>
+        </edge>
+        <edge id="e8" type="input" target="n6" source="n12">
+          <point x="240" y="50"/>
+          <point x="3" y="50"/>
+        </edge>
+        <edge id="e9" type="inclusion" target="n7" source="n13">
+          <point x="-107" y="220"/>
+          <point x="-107" y="-100"/>
+        </edge>
+      </diagram>
+    </diagrams>
+  </project>
+</graphol>

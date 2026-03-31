@@ -1,0 +1,271 @@
+@prefix : <https://cdm.ovh/rsm/partsAndViews/pavo#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix pavo: <https://cdm.ovh/rsm/partsAndViews/pavo#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rsmt: <https://cdm.ovh/rsm/time/time#> .
+@base <https://cdm.ovh/rsm/partsAndViews/pavo> .
+
+<https://cdm.ovh/rsm/partsAndViews/pavo> rdf:type owl:Ontology ;
+                                          owl:versionIRI <https://cdm.ovh/rsm/partsAndViews/pavo/0.1> ;
+                                          owl:imports <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ,
+                                                      <https://cdm.ovh/rsm/time/time> ;
+                                          rdfs:comment "Adapter ontology aligning part-whole and view modeling patterns with DUL. It keeps one OWL-native authoritative containment pattern and adds a contextual containment-tree pattern for open-ended tree vocabularies."@en ;
+                                          rdfs:label "Parts and views"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasProperPart
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasProperPart> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isUnifiedBy
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isUnifiedBy> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies> rdf:type owl:ObjectProperty .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#contains
+pavo:contains rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf pavo:containsTransitive ;
+              owl:inverseOf pavo:isContainedIn ;
+              rdf:type owl:InverseFunctionalProperty ;
+              rdfs:domain pavo:ContainerEntity ;
+              rdfs:range pavo:AssetEntity ;
+              rdfs:comment "immediate containment property. A shortcut for the reified containment property that may be valid over some time interval. To be generated and isolated in an annotated graph, for ease of queying."@en ;
+              rdfs:label "contains"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#containsTransitive
+pavo:containsTransitive rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasProperPart> ;
+                        owl:inverseOf pavo:isContainedInTransitive ;
+                        rdf:type owl:TransitiveProperty ;
+                        rdfs:comment "transitive closure of containment"@en ;
+                        rdfs:label "contains transitive"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#denotes
+pavo:denotes rdf:type owl:ObjectProperty ;
+             rdfs:domain pavo:View ;
+             rdfs:range pavo:AssetEntity ;
+             rdfs:comment "links a view to the domain entity or entities it is about."@en ;
+             rdfs:label "denotes"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#hasPartInAssertion
+pavo:hasPartInAssertion rdf:type owl:ObjectProperty ;
+                        owl:inverseOf pavo:isPartOfContainmentAssertion ;
+                        rdfs:domain pavo:ContainmentSituation ;
+                        rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object> ;
+                        rdfs:label "has part in assertion"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#hasSubview
+pavo:hasSubview rdf:type owl:ObjectProperty ;
+                rdfs:domain pavo:View ;
+                rdfs:range pavo:View ;
+                rdfs:comment "structural relation between views. As per our modeling choice, need not be functional or tree-enforcing globally."@en ;
+                rdfs:label "has subview"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#hasViewDescription
+pavo:hasViewDescription rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies> ;
+                        rdfs:domain pavo:ViewSituation ;
+                        rdfs:range pavo:View ;
+                        rdfs:label "has view description"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#hasWholeInAssertion
+pavo:hasWholeInAssertion rdf:type owl:ObjectProperty ;
+                         owl:inverseOf pavo:isWholeOfContainmentAssertion ;
+                         rdfs:domain pavo:ContainmentSituation ;
+                         rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object> ;
+                         rdfs:label "has whole in assertion"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#isContainedIn
+pavo:isContainedIn rdf:type owl:ObjectProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:label "is contained in"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#isContainedInTransitive
+pavo:isContainedInTransitive rdf:type owl:ObjectProperty ;
+                             rdfs:label "is contained in transitive"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#isPartOfContainmentAssertion
+pavo:isPartOfContainmentAssertion rdf:type owl:ObjectProperty ;
+                                  rdfs:label "is part of containment assertion"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#isWholeOfContainmentAssertion
+pavo:isWholeOfContainmentAssertion rdf:type owl:ObjectProperty ;
+                                   rdfs:label "is whole of containment assertion"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#ofContainmentType
+pavo:ofContainmentType rdf:type owl:ObjectProperty ;
+                       rdfs:domain pavo:ContainmentSituation ;
+                       rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+                       rdfs:comment "Allows to 'lexically type' containment relationships, using some SKOS concept scheme. Alternatively, subproperties can be envisaged and could ultimately become part of the present ontology."@en ;
+                       rdfs:label "of containment type"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#showsEntity
+pavo:showsEntity rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
+                 rdfs:comment "an entity seen under a view"@en ;
+                 rdfs:label "shows entity" .
+
+
+###  https://cdm.ovh/rsm/time/time#hasValidityInterval
+rsmt:hasValidityInterval rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Configuration
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Configuration> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> rdf:type owl:Class ;
+                                                                    owl:disjointWith pavo:AssetEntity .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> rdf:type owl:Class ;
+                                                                          owl:disjointWith pavo:AssetEntity .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval> rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#AssetEntity
+pavo:AssetEntity rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object> ;
+                 rdfs:comment "any domain entity that can belong to the system being structured, whether atomic or composite at the chosen granularityany domain entity that can belong to the system being structured, whether atomic or composite at the chosen granularity"@en ;
+                 rdfs:label "Asset entity"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#ContainerEntity
+pavo:ContainerEntity rdf:type owl:Class ;
+                     rdfs:subClassOf pavo:AssetEntity ;
+                     rdfs:comment "an asset entity that may contain other asset entities."@en ;
+                     rdfs:label "Container entity" .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentSituation
+pavo:ContainmentSituation rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty pavo:hasPartInAssertion ;
+                                            owl:allValuesFrom pavo:AssetEntity
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty pavo:hasWholeInAssertion ;
+                                            owl:allValuesFrom pavo:AssetEntity
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty rsmt:hasValidityInterval ;
+                                            owl:allValuesFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval>
+                                          ] ;
+                          rdfs:comment "Reified direct containment assertion scoped by a containment-tree individual. This pattern preserves tree identity and tree typing, but OWL 2 DL does not provide scoped transitive closure for a specific tree individual; use rules, SPARQL property paths, or materialization when per-tree closure is needed."@en ;
+                          rdfs:label "Containment situation" .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentTree
+pavo:ContainmentTree rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Configuration> ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember> ;
+                                       owl:someValuesFrom pavo:ContainmentSituation
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isUnifiedBy> ;
+                                       owl:allValuesFrom pavo:ContainmentTreeType
+                                     ] ;
+                     rdfs:label "Containment tree"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#ContainmentTreeType
+pavo:ContainmentTreeType rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> ;
+                         rdfs:label "Containment tree type"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#View
+pavo:View rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy> ;
+                            owl:allValuesFrom pavo:ViewStatement
+                          ] ;
+          rdfs:comment "a descriptive perspective on one or more asset entities."@en ;
+          rdfs:label "View" .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#ViewSituation
+pavo:ViewSituation rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty pavo:hasViewDescription ;
+                                     owl:someValuesFrom pavo:View
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty pavo:showsEntity ;
+                                     owl:someValuesFrom pavo:AssetEntity
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty rsmt:hasValidityInterval ;
+                                     owl:someValuesFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval>
+                                   ] ;
+                   rdfs:comment "a situation in which a given view is applied to a given asset or container, optionally during a validity interval."@en ;
+                   rdfs:label "View situation"@en .
+
+
+###  https://cdm.ovh/rsm/partsAndViews/pavo#ViewStatement
+pavo:ViewStatement rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> ;
+                   rdfs:comment "an information object that expresses, records, serializes, or publishes a view." ;
+                   rdfs:label "View statement"@en .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi
