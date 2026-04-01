@@ -55,6 +55,10 @@ dul:hasSetting rdf:type owl:ObjectProperty .
 dul:isSettingFor rdf:type owl:ObjectProperty .
 
 
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies
+dul:satisfies rdf:type owl:ObjectProperty .
+
+
 ###  https://cdm.ovh/rsm/network/netw#containsEntity
 netw:containsEntity rdf:type owl:ObjectProperty ;
                     owl:inverseOf netw:isContainedIn ;
@@ -77,14 +81,6 @@ netw:hasSubNetwork rdf:type owl:ObjectProperty ;
                    owl:inverseOf netw:isSubNetworkOf ;
                    rdfs:comment "Links an infrastructure artefact (network or sub-network) to its sub-networks."@en ;
                    rdfs:label "has sub network"@en .
-
-
-###  https://cdm.ovh/rsm/network/netw#hasTopology
-netw:hasTopology rdf:type owl:ObjectProperty ,
-                          owl:FunctionalProperty ;
-                 rdfs:domain netw:NetworkLayout ;
-                 rdfs:range netw:NetworkTopology ;
-                 rdfs:label "has topology"@en .
 
 
 ###  https://cdm.ovh/rsm/network/netw#isContainedIn
@@ -130,6 +126,16 @@ netw:isManagementFor rdf:type owl:ObjectProperty ;
 ###  https://cdm.ovh/rsm/network/netw#isSubNetworkOf
 netw:isSubNetworkOf rdf:type owl:ObjectProperty ;
                     rdfs:label "is subnetwork of" .
+
+
+###  https://cdm.ovh/rsm/network/netw#satisfiesTopology
+netw:satisfiesTopology rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf dul:satisfies ;
+                       rdf:type owl:FunctionalProperty ;
+                       rdfs:domain netw:NetworkLayout ;
+                       rdfs:range netw:NetworkTopology ;
+                       rdfs:comment "a subproperty of dul:satisfies; links a situation to a description."@en ;
+                       rdfs:label "satisfies topology"@en .
 
 
 ###  https://cdm.ovh/rsm/network/netw#serializedAs
@@ -189,7 +195,7 @@ netw:NetEntity rdf:type owl:Class ;
 netw:NetworkLayout rdf:type owl:Class ;
                    rdfs:subClassOf dul:Situation ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty netw:hasTopology ;
+                                     owl:onProperty netw:satisfiesTopology ;
                                      owl:someValuesFrom netw:NetworkTopology
                                    ] ,
                                    [ rdf:type owl:Restriction ;
